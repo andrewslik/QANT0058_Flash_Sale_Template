@@ -6,6 +6,7 @@ var tl,
     backup = false;
 
 function politeInit() {
+
     Enabler.setProfileId(1080399);
     var devDynamicContent = {};
 
@@ -16,14 +17,14 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].city_pair = "SYD-HKG";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.RawValue = "03/06/2016";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457222400000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457251200000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.RawValue = "06/06/2016";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465171200000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465196400000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
@@ -36,20 +37,26 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x600_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-300x600.jpg";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1 = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-728x90.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-970x250.jpg";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_160x600 = "Qantas fly away sale";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x250 = "Qantas fly away sale";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x600 = "Qantas fly away sale";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_728x90 = "Qantas fly away sale";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to \u2026 now";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to \u2026 now";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to \u2026 now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_970x250 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to now";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_728x90 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to now";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_160x600 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms = "*Prices based on payment at qantas.com by BPAY or POLi. Sale ends 23:59 (AEST) 6 June 2016, unless sold out prior. Selected travel dates and conditions apply.";
     Enabler.setDevDynamicContent(devDynamicContent);
+
 
     clicktag = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url;
 
@@ -102,8 +109,8 @@ function preloadAssets() {
 
 function backupAnimation() {
     backup = true;
-
     countdown();
+
 
     if (imagesLoaded) {
         initBanner();
@@ -121,16 +128,43 @@ function countdown() {
 
     var now = new Date();
 
-    var eventTime = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue; //Sun, 21 Apr 2013 13:00:00 GMT
-    var currentTime = now.getTime(); //Thu, 24 Jan 2013 13:00:00 GMT
+    var eventTime =  dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue;
+    var currentTime = now.getTime();
 
     var diffTime = eventTime - currentTime; //better to handle this in Controller to avoid timezone problem
-    var duration = moment.duration(diffTime, 'seconds');
-    var interval = 1;
+    var duration = moment.duration(diffTime, 'milliseconds');
+    var interval = 1000;
 
-    duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+    setInterval(function(){
+      duration = moment.duration(duration - interval, 'milliseconds');
+      // console.log( (duration.days()+ "d:" + duration.hours() + "h:" + duration.minutes() + "m:" + duration.seconds() + "s") )
 
-    console.log(duration.days() + 'd:' + duration.hours() + 'h:' + duration.minutes() + 'm:' + duration.seconds() + 's')
+      //Update ountdown timer
+      var daysLeft    = duration.days(),
+          hoursLeft   = duration.hours(),
+          minutesLeft = duration.minutes(),
+          secondsLeft = duration.seconds();
+
+      //To make into double digits
+      if(secondsLeft.toString().length === 1) {
+        secondsLeft = "0" + secondsLeft
+      }
+      if(minutesLeft.toString().length === 1) {
+        minutesLeft = "0" + minutesLeft
+      }
+      if(hoursLeft.toString().length === 1) {
+        hoursLeft = "0" + hoursLeft
+      }
+      if(daysLeft.toString().length === 1) {
+        daysLeft = "0" + daysLeft
+      }
+
+      $(".days-left").html(daysLeft)
+      $(".hours-left").html(hoursLeft)
+      $(".min-left").html(minutesLeft)
+      $(".sec-left").html(secondsLeft)
+
+    }, interval);
 }
 
 
@@ -238,68 +272,16 @@ function initAnimation() {
 
 function initCSS() {
     // SET STARTING POSITIONS FOR ELEMENTS
-    TweenLite.set($("#blue-shape"), {
-        alpha: .9,
-        rotation: 50,
-        scaleX: 0.4,
-        scaleY: 0.4,
-        x: 60,
-        y: 80,
-        overwrite: "none",
-        force3D: false
-    });
-    TweenLite.set($("#red-shape"), {
-        alpha: .8,
-        rotation: -20,
-        scaleX: 0.2,
-        scaleY: 0.2,
-        x: 140,
-        y: 83,
-        overwrite: "none",
-        force3D: false
-    });
-    TweenLite.set($("#mask-shape"), {
-        rotation: 30,
-        scaleX: 0.3,
-        scaleY: 0.3,
-        x: -2235,
-        y: -1270,
-        overwrite: "none",
-        force3D: false
-    });
-    TweenLite.set($(".shapes"), {
-        rotation: 160,
-        transformOrigin: "50% 50%",
-        overwrite: "none",
-        force3D: false
-    });
-
-    TweenLite.set($("#red-shape-end-frame"), {
-        scaleX: .1,
-        x: 20,
-        y: 310,
-        overwrite: "none",
-        force3D: false
-    });
-    TweenLite.set($("#red-shape-end-frame2"), {
-        autoAlpha: 0,
-        rotation: 100,
-        x: 100,
-        y: 150,
-        scaleX: .3,
-        scaleY: .5
-    });
-
-    TweenLite.set($(".terms-wrapper"), {
-        alpha: 0
-    })
-    TweenLite.set($(".button"), {
-        alpha: 0,
-        scale: .5
-    })
-    TweenLite.set($(".logos"), {
-        alpha: 0
-    })
+    TweenLite.set($("#blue-shape"), {alpha: .9, rotation: 50, scaleX: 0.4, scaleY: 0.4, x: 60, y: 80, overwrite: "none", force3D: false});
+    TweenLite.set($("#red-shape"), {alpha: .8, rotation: -20, scaleX: 0.2, scaleY: 0.2, x: 140, y: 83, overwrite: "none", force3D: false});
+    TweenLite.set($("#mask-shape"), {rotation: 30, scaleX: 0.3, scaleY: 0.3, x: -2235, y: -1270, overwrite: "none", force3D: false});
+    TweenLite.set($(".shapes"), {rotation: 160, transformOrigin: "50% 50%", overwrite: "none", force3D: false});
+    TweenLite.set($("#red-shape-end-frame"), {scaleX: .1, x: 20, y: 310, overwrite: "none", force3D: false});
+    TweenLite.set($("#red-shape-end-frame2"), {autoAlpha: 0, rotation: 100, x: 100, y: 150, scaleX: .3, scaleY: .5});
+    TweenLite.set($(".terms-wrapper"), {alpha: 0})
+    TweenLite.set($(".button"), {alpha: 0, scale: .5})
+    TweenLite.set($(".logos"), {alpha: 0})
+    // TweenLite.set($(".countdown-container"), {alpha:0})
 }
 
 
@@ -324,14 +306,8 @@ function adjustCopyLayout() {
 function f1CopyAnimation() {
     var tl = new TimelineLite();
 
-    var mySplitText = new SplitText("#f1-copy", {
-        type: "chars",
-        absolute: true
-    });
-    var mySplitText02 = new SplitText("#f2-copy", {
-        type: "chars",
-        absolute: true
-    });
+    var mySplitText = new SplitText("#f1-copy", {type: "chars", absolute: true});
+    var mySplitText02 = new SplitText("#f2-copy", {type: "chars", absolute: true});
 
     var lets = shuffleLetters(mySplitText.chars, mySplitText02.chars);
     var letters = lets[0];
@@ -482,60 +458,13 @@ function startAnimation() {
         redShapeEndFrame01 = $("#red-shape-end-frame"),
         redShapeEndFrame02 = $("#red-shape-end-frame2");
 
-    tl.to(shapes, 2, {
-            rotation: -10,
-            transformOrigin: "50% 50%"
-        }, "0")
-        .to(maskShape, 1.5, {
-            rotation: 20,
-            scaleX: 1.3,
-            scaleY: 1.3,
-            x: -2100,
-            y: -1245,
-            ease: Sine.easeInOut
-        }, "0")
-
-    .to(redShape, 1, {
-            rotation: -10,
-            scaleX: 1.4,
-            scaleY: 1.4,
-            x: 180,
-            y: 30,
-            ease: Sine.easeInOut
-        }, ".3")
-        .to(blueShape, 1, {
-            rotation: 0,
-            scaleX: 1,
-            scaleY: 1,
-            x: 13,
-            y: 117,
-            ease: Sine.easeInOut
-        }, ".3")
-
-    .to(maskShape, .7, {
-            rotation: 0,
-            scaleX: 4,
-            scaleY: 5,
-            x: -1870,
-            y: -1315,
-            ease: Expo.easeIn
-        }, ".8")
-        .to(blueShape, .7, {
-            rotation: -120,
-            scaleX: 2,
-            scaleY: 2,
-            x: -60,
-            y: 440,
-            ease: Sine.easeInOut
-        }, "1.1")
-        .to(redShape, .7, {
-            rotation: 40,
-            scaleX: 6,
-            scaleY: 6,
-            x: 240,
-            y: -220,
-            ease: Sine.easeInOut
-        }, "1.1")
+    tl.to(shapes, 2, {rotation: -10, transformOrigin: "50% 50%"}, "0")
+    .to(maskShape, 1.5, {rotation: 20, scaleX: 1.3, scaleY: 1.3, x: -2100, y: -1245, ease: Sine.easeInOut}, "0")
+    .to(redShape, 1, {rotation: -10, scaleX: 1.4, scaleY: 1.4, x: 180, y: 30, ease: Sine.easeInOut}, ".3")
+    .to(blueShape, 1, {rotation: 0, scaleX: 1, scaleY: 1, x: 13, y: 117, ease: Sine.easeInOut}, ".3")
+    .to(maskShape, .7, {rotation: 0, scaleX: 4, scaleY: 5, x: -1870, y: -1315, ease: Expo.easeIn}, ".8")
+    .to(blueShape, .7, {rotation: -120, scaleX: 2, scaleY: 2, x: -60, y: 440, ease: Sine.easeInOut}, "1.1")
+    .to(redShape, .7, {rotation: 40, scaleX: 6, scaleY: 6, x: 240, y: -220, ease: Sine.easeInOut}, "1.1")
 
     //FRAME 01
     tl.add(f1CopyAnimation, "0")
@@ -545,77 +474,38 @@ function startAnimation() {
     tl.add(f2CopyAnimation, "0")
     tl.add(fadeF2OutText, "9")
 
-    tl.to(blueShape, 1.5, {
-        x: -220,
-        y: 555,
-        ease: Back.easeIn
-    }, "8.3")
-    tl.to(redShape, 1.5, {
-        x: 330,
-        y: -390,
-        ease: Back.easeIn
-    }, "8.3")
+    tl.to(blueShape, 1.5, {x: -220, y: 555, ease: Back.easeIn}, "8.3")
+    tl.to(redShape, 1.5, {x: 330, y: -390, ease: Back.easeIn}, "8.3")
 
     //FRAME 03
-    tl.to(bgImage, 1, {
-        alpha: 0,
-        ease: Sine.easeOut
-    }, "9.5")
-    tl.to(logos, 1, {
-        alpha: 1,
-        ease: Sine.easeOut
-    }, "9.7")
+    tl.to(bgImage, 1, {alpha: 0, ease: Sine.easeOut}, "9.5")
+    tl.to(logos, 1, {alpha: 1, ease: Sine.easeOut}, "9.7")
 
-    tl.from(f5Copy, 1, {
-        alpha: 0,
-        y: -10,
-        ease: Sine.easeOut
-    }, "9.9")
-    tl.from(price, 1.4, {
-        alpha: 0,
-        y: -10,
-        ease: Sine.easeOut
-    }, "9.9")
-    tl.to(terms, 1, {
-        alpha: 1,
-        ease: Sine.easeOut
-    }, "9.9")
-    tl.to(ctaBtn, 1, {
-        alpha: 1,
-        scale: 1,
-        ease: Sine.easeOut
-    }, "9.7")
+    tl.from(f5Copy, 1, {alpha: 0, y: -10, ease: Sine.easeOut}, "9.9")
+    tl.from(price, 1.4, {alpha: 0, y: -10, ease: Sine.easeOut}, "9.9")
+    tl.to(terms, 1, {alpha: 1, ease: Sine.easeOut}, "9.9")
+    tl.to(ctaBtn, 1, {alpha: 1, scale: 1, ease: Sine.easeOut}, "9.7")
 
-    tl.to(redShapeEndFrame02, 2.5, {
-        autoAlpha: 0,
-        rotation: -50,
-        scaleX: 1.3,
-        scaleY: 1.3,
-        x: 100,
-        y: 50,
-        ease: Sine.easeOut
-    }, "5.7")
-    tl.to(redShapeEndFrame01, 2, {
-        autoAlpha: .4,
-        scaleX: .7,
-        scaleY: .7,
-        x: 453,
-        y: 87,
-        rotation: 0,
-        ease: Sine.easeOut
-    }, "8.6")
-    tl.to(redShapeEndFrame02, 2, {
-        autoAlpha: .3,
-        rotation: 20,
-        scaleX: .43,
-        scaleY: .43,
-        x: -6,
-        y: 7,
-        ease: Sine.easeInOut
-    }, "8.6")
+    if(backup){
+      tl.from(".countdown-container", .4, {autoAlpha:0, ease:Sine.easeOut}, "10.2")
+      $("#price-left-copy").hide()
+      $("#price").hide()
+      $("#price-right-copy").hide()
+      $("#destination").html("Hong Kong<br />& Shanghai").css({fontSize: '26px', lineHeight: '28px'})
+      $("#sub-text").html("Until 6 June")
+      $("#from").html("THE FLY AWAY SALE").css({width: '140px', fontWeight: '700'})
+
+    } else {
+      TweenLite.set($(".countdown-container"), {alpha:0})
+      TweenLite.set($(".from-line-01"), {alpha:0})
+      TweenLite.set($(".from-line-02"), {alpha:0})
+    }
+
+    tl.to(redShapeEndFrame02, 2.5, {autoAlpha: 0, rotation: -50, scaleX: 1.3, scaleY: 1.3, x: 100, y: 50, ease: Sine.easeOut}, "5.7")
+    tl.to(redShapeEndFrame01, 2, {autoAlpha: .4, scaleX: .7, scaleY: .7, x: 453, y: 87, rotation: 0, ease: Sine.easeOut}, "8.6")
+    tl.to(redShapeEndFrame02, 2, {autoAlpha: .3, rotation: 20, scaleX: .43, scaleY: .43, x: -6, y: 7, ease: Sine.easeInOut}, "8.6")
 
     tl.add(f3CopyAnimation, "0")
-        // tl.pause(8)
 }
 
 function fadeF1OutText() {
@@ -680,8 +570,6 @@ function shuffleLetters(array1, array2) {
 }
 
 // PRE-LOAD IMAGES FUNCTIONALITY ------------------------------------------------------------
-
-
 function preloadimages(arr) {
 
     var newimages = [],
