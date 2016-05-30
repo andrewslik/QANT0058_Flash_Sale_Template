@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script src="//s0.2mdn.net/ads/studio/Enabler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="SplitText.min.js"></script>
+    <script src="ScrambleTextPlugin.min.js"></script>
+
+    <script language="javascript">
+        if (Enabler.isInitialized())
+            init();
+        else
+            Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+
+
+        function init() {
+            if (Enabler.isPageLoaded())
+                politeInit();
+            else
+                Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+        }
+    </script>
+
+</head>
+
+<body class="mrec">
+
+    <!--LOADER CIRCLE-->
+    <div class="loader">
+        <img src="loader.svg" alt="" />
+    </div>
+
+    <div class="container" style="display:none;">
+
+        <!--STANDARD CLICKTAG-->
+        <a href="javascript:exit()">
+            <div class="button"><span id="cta-text">Book now</span></div>
+            <button id="background_exit_dc"></button>
+        </a>
+
+        <div class="grey-border"></div>
+
+        <div class="overlay">
+            <div class="overlay-close">
+                <img src="close.gif" alt="" />
+            </div>
+            <h6>Important information</h6>
+            <div class="overlay-body">
+                <span class="terms-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar nunc vitae rhoncus pellentesque. Sed non ullamcorper elit. Sed feugiat gravida odio a.</span>
+            </div>
+        </div>
+
+
+        <div class="banner">
+
+
+            <div class="copy-text">
+              <!-- FRAME 01 -->
+              <h1 class="copy" id="f1-copy"></h1>
+              <h1 class="copy" id="f2-copy"></h1>
+
+              <!-- FRAME 02 -->
+              <h1 class="copy" id="f3-copy"></h1>
+              <h1 class="copy" id="f4-copy"></h1>
+            </div>
+
+
+
+            <!-- ------- FRAME 03 ------- -->
+            <div class="copy" id="f5-copy">
+                <div id="destination-lockup">
+                    <span id="from"></span>
+                    <span id="destination"></span>
+                </div>
+                <div id="price-lockup">
+                    <span id="price-left-copy">from</span>
+                    <span id="price"></span>
+                    <span id="price-right-copy"></span>
+                </div>
+            </div>
+
+            <!-- Logos -->
+            <img class="logos-qantas" src="logos-qantas.png" />
+
+            <!-- USE THIS IF THERE IS A "CLICK FOR EXTENDED TERMS" BUTTON -->
+            <!-- <div class="terms-wrapper">
+                    <span class="terms">*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar nunc vitae rhoncus pellentesque. Sed non ullamcorper elit. Sed feugiat gravida odio a. </span><span class="overlay-trigger">Click for important information.</span>
+            </div> -->
+
+            <!-- USE THIS IF THERE ARE NO "CLICK FOR EXTENDED TERMS" NEEDED -->
+
+
+            <div class="terms-wrapper">
+              <span class="terms">*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar nunc vitae rhoncus pellentesque. Sed non ullamcorper elit. Sed feugiat gravida odio a.</span>
+            </div>
+
+
+            <!-- ------- BASE ELEMENTS ------- -->
+            <div class="shapes">
+                <img id="blue-shape" src="shape-blue.svg" />
+                <img id="red-shape" src="shape-red.svg" />
+                <img id="mask-shape" src="shape-mask.svg" />
+            </div>
+            <img id="red-shape-end-frame" src="shape-red-end-frame2.svg" />
+            <img id="red-shape-end-frame2" src="shape-red-end-frame2.svg" />
+
+            <div class="bg-image">
+                <img class="bg-image-01" src="base-image-01.jpg" alt="" />
+            </div>
+
+        </div>
+    </div>
+    <script src="banner.min.js"></script>
+</body>
+
+</html>
