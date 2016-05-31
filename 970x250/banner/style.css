@@ -614,6 +614,7 @@ body.mrec .container {
     top: 0;
     bottom: 0;
     margin: auto;
+    text-transform: uppercase;
 }
 #f2-copy {
   position: absolute;
@@ -631,6 +632,7 @@ body.mrec .container {
   top: 0;
   bottom: 0;
   margin: auto;
+  text-transform: uppercase;
 }
 #f1-copy div {
   text-align: center !important;
