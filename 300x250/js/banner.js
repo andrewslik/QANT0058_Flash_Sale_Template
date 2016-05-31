@@ -45,7 +45,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_728x90 = "Qantas fly away sale";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_970x250 = "Qantas fly away sale";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to now";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to Hong Kong now";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to now";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_728x90 = "Fly away to now";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to now";
@@ -292,84 +292,6 @@ function adjustCopyLayout() {
     // }
 }
 
-/*
-$(document).ready(function () {
-    var i = [
-      "close.gif",
-      "shape-blue.svg",
-      "shape-mask.svg",
-      "shape-red-end-frame.svg",
-      "shape-red-end-frame2.svg",
-      "shape-red.svg",
-      "shape-white.svg"
-  ];
-
-    preloadimages(i).done(function (images) {
-        initCSS();
-        adjustCopyLayout();
-        setTimeout(function() {
-          startAnimation();
-        }, 240)
-        // startAnimation();
-
-        // TERMS & CONDITIONS FUNCTIONALITY / COMMENT OUT IF NOT NEEDED
-        $(".overlay-close").click(function () {
-            $(".overlay").hide();
-            $(".terms-wrapper").show();
-        });
-
-        $(".overlay-trigger").click(function () {
-            $(".terms-wrapper").hide();
-            $(".overlay").show();
-        });
-    })
-});
-
-// COPY UPDATES
-var f1Copy = 'QANTAS<br />FLY AWAY<br >SALE'
-var f2Copy = 'Fly away to<br/>Shanghai now'
-var price = '1,234'
-
-$("#f1-copy").html(f1Copy)
-$("#f2-copy").html(f1Copy)
-
-$("#f3-copy").html(f2Copy)
-$("#f4-copy").html(f2Copy)
-
-$("#price-animation").html(price)
-
-// PRELOAD FONT FUNCTION
-// function preloadFont(){
-//   var anyFont = new Font();
-//   anyFont.src = "lineto-brauerneue-regular.ttf";
-//   anyFont.onload = function () {
-//     console.log("font loaded");
-//   }
-// }
-
-function initCSS() {
-    // SET STARTING POSITIONS FOR ELEMENTS
-    TweenLite.set($("#blue-shape"), {alpha: .9, rotation: 50, scaleX: 0.4, scaleY: 0.4, x: 60, y: 80, overwrite: "none", force3D: false});
-    TweenLite.set($("#red-shape"), {alpha: .8, rotation: -20, scaleX: 0.2, scaleY: 0.2, x: 140, y: 83, overwrite: "none", force3D: false});
-    TweenLite.set($("#mask-shape"), {rotation: 30, scaleX: 0.3, scaleY: 0.3, x: -2235, y: -1270, overwrite: "none", force3D: false});
-    TweenLite.set($(".shapes"), {rotation: 160, transformOrigin: "50% 50%", overwrite: "none", force3D: false});
-    TweenLite.set($("#red-shape-end-frame"), {scaleX: .1, x: 20, y: 310, overwrite: "none", force3D: false});
-    TweenLite.set($("#red-shape-end-frame2"), {autoAlpha:0, rotation:50, scaleX: 1, scaleY: 1.1, x:150, y:-130});
-
-    TweenLite.set($(".terms-wrapper"), {alpha:0})
-    TweenLite.set($(".button"), {alpha:0, scale:.5})
-    TweenLite.set($(".logos"), {alpha:0})
-}
-
-
-function adjustCopyLayout() {
-    // RE-POSITION TEXT ELEMENTS DEPENDING ON WHAT VALUES ARE ENTERED IN THE HTML
-    // IF THE DESTINATION TEXT IS TOO LONG TO FIT ON ONE LINE, WE REDUCE THE FONT SIZE
-    // if($("#destination").text().length > 14){
-    //     $("#destination").css("fontSize","24px");
-    // }
-}
-*/
 function f1CopyAnimation() {
   var tl = new TimelineLite();
 
