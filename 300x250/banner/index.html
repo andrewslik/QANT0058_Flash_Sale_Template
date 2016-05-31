@@ -3,16 +3,23 @@
 <html lang="en">
 
 <head>
+    <script src="//s0.2mdn.net/ads/studio/Enabler.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-
-    <!--STANDARD CLICKTAG (clicktag variable is a placeholder "https://www.google.com" for example -->
     <script language="javascript">
-        var clickTag = "https://www.google.com";
+        if (Enabler.isInitialized())
+            init();
+        else
+            Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+
+        function init() {
+            if (Enabler.isPageLoaded())
+                politeInit();
+            else
+                Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+        }
     </script>
 
 </head>
@@ -47,15 +54,17 @@
         <div class="banner">
 
             <div class="copy-text">
-              <div id="f1-copy"></div>
-              <div id="f2-copy"></div>
+                <div id="f1-copy"></div>
+                <div id="f2-copy"></div>
 
-              <div id="f3-copy"></div>
-              <div id="f4-copy"></div>
+                <div id="f3-copy"></div>
+                <div id="f4-copy"></div>
             </div>
 
             <!-- Frame 03 -->
             <div class="copy" id="f5-copy">
+                <span class="from-line-01"></span>
+                <span class="from-line-02"></span>
                 <span id="from">Fly Sydney to</span>
                 <span id="destination">Shanghai</span>
                 <div id="price-lockup">
@@ -63,6 +72,7 @@
                     <span id="price">$<span id="price-animation"></span><span id="asterix-char">*</span></span>
                     <span id="price-right-copy">Economy<br />One Way</span>
                 </div>
+                <span id="sub-text"></span>
             </div>
 
             <!-- Logos -->
@@ -82,6 +92,23 @@
 
             <img id="red-shape-end-frame" src="shape-red-end-frame.svg" />
             <img id="red-shape-end-frame2" src="shape-red-end-frame2.svg" />
+
+            <!-- Countdown container -->
+            <div class="countdown-container">
+                <div class="countdown-timer top-numbers">
+                    <div class="day-line line-time"></div>
+                    <div class="hour-line line-time"></div>
+                    <div class="min-line line-time"></div>
+                    <div class="sec-line line-time"></div>
+                    <span class="time-units days-left"></span>:<span class="time-units hours-left"></span>:<span class="time-units min-left"></span>:<span class="time-units sec-left"></span>
+                    <span class="subtitle-container">
+                  <div class="subtitle-text days-subtitle">DAYS</div>
+                  <div class="subtitle-text hours-subtitle">HOURS</div>
+                  <div class="subtitle-text mins-subtitle">MINS</div>
+                  <div class="subtitle-text sec-subtitle">SECS</div>
+                </span>
+                </div>
+            </div>
 
             <!-- Background image -->
             <div class="bg-image">
