@@ -1,58 +1,274 @@
 // JavaScript Document
-var tl;
-$(document).ready(function () {
-    var i = [
-      "close.gif",
-      "shape-blue.svg",
-      "shape-mask.svg",
-      "shape-red-end-frame.svg",
-      "shape-red-end-frame2.svg",
-      "shape-red.svg",
-      "shape-white.svg"
-  ];
+var tl,
+    clicktag,
+    size = "300x250",
+    imagesLoaded = false,
+    backup = false;
 
-    preloadimages(i).done(function (images) {
-        initCSS();
-        adjustCopyLayout();
-        setTimeout(function() {
-          startAnimation();
-        }, 240)
-        // startAnimation();
+function politeInit() {
+
+    Enabler.setProfileId(1080399);
+    var devDynamicContent = {};
+
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1 = [{}];
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]._id = 0;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].id = 1;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].reporting = "00418|QF|Airline|Flash Sales|Red Planet|Jun-16|SG1|DBM|Display|160x600|SYD-HKG-price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].city_pair = "SYD-HKG";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.RawValue = "03/06/2016";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457251200000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.RawValue = "06/06/2016";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465196400000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-160x600.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x250_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x250_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-300x250.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x600_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x600_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-300x600.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-728x90.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-970x250.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_160x600 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x250 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x600 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_728x90 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_970x250 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_728x90 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_160x600 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms = "*Prices based on payment at qantas.com by BPAY or POLi. Sale ends 23:59 (AEST) 6 June 2016, unless sold out prior. Selected travel dates and conditions apply.";
+    Enabler.setDevDynamicContent(devDynamicContent);
+
+
+    clicktag = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url;
+
+    $(".terms").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms);
+    $("#f1-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame1_text_' + size]);
+    $("#f2-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame1_text_' + size]);
+    $("#f3-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
+    $("#f4-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
+
+    preloadAssets();
+
+    if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price)
+        backupAnimation();
+    else
+        loadFeed();
+        // backupAnimation();
+
+}
+
+function exit() {
+    Enabler.exitOverride('clickthrough', clicktag);
+}
+
+function preloadAssets() {
+    var i = [
+        "close.gif",
+        "shape-blue.svg",
+        "shape-mask.svg",
+        "shape-red-end-frame.svg",
+        "shape-red-end-frame2.svg",
+        "shape-red.svg",
+        "shape-white.svg"
+    ];
+
+    preloadimages(i).done(function(images) {
+
+        imagesLoaded = true;
 
         // TERMS & CONDITIONS FUNCTIONALITY / COMMENT OUT IF NOT NEEDED
-        $(".overlay-close").click(function () {
+        $(".overlay-close").click(function() {
             $(".overlay").hide();
             $(".terms-wrapper").show();
         });
 
-        $(".overlay-trigger").click(function () {
+        $(".overlay-trigger").click(function() {
             $(".terms-wrapper").hide();
             $(".overlay").show();
         });
     })
-});
+}
 
-// COPY UPDATES
-var f1Copy = 'QANTAS FLY AWAY SALE'
-var f2Copy = 'Fly away to Shanghai now'
-var price = '1,234'
+function backupAnimation() {
+    backup = true;
+    countdown();
 
-$("#f1-copy").html(f1Copy)
-$("#f2-copy").html(f1Copy)
 
-$("#f3-copy").html(f2Copy)
-$("#f4-copy").html(f2Copy)
+    if (imagesLoaded) {
+        initBanner();
+    } else {
+        si = setInterval(function() {
+            if (imagesLoaded) {
+                initBanner();
+                clearInterval(si);
+            }
+        }, 250)
+    }
+}
 
-$("#price-animation").html(price)
+function countdown() {
 
-// PRELOAD FONT FUNCTION
-// function preloadFont(){
-//   var anyFont = new Font();
-//   anyFont.src = "lineto-brauerneue-regular.ttf";
-//   anyFont.onload = function () {
-//     console.log("font loaded");
-//   }
-// }
+    var now = new Date();
+
+    var eventTime =  dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue;
+    var currentTime = now.getTime();
+
+    var diffTime = eventTime - currentTime; //better to handle this in Controller to avoid timezone problem
+    var duration = moment.duration(diffTime, 'milliseconds');
+    var interval = 1000;
+
+    setInterval(function(){
+      duration = moment.duration(duration - interval, 'milliseconds');
+      // console.log( (duration.days()+ "d:" + duration.hours() + "h:" + duration.minutes() + "m:" + duration.seconds() + "s") )
+
+      //Update ountdown timer
+      var daysLeft    = duration.days(),
+          hoursLeft   = duration.hours(),
+          minutesLeft = duration.minutes(),
+          secondsLeft = duration.seconds();
+
+      //To make into double digits
+      if(secondsLeft.toString().length === 1) {
+        secondsLeft = "0" + secondsLeft
+      }
+      if(minutesLeft.toString().length === 1) {
+        minutesLeft = "0" + minutesLeft
+      }
+      if(hoursLeft.toString().length === 1) {
+        hoursLeft = "0" + hoursLeft
+      }
+      if(daysLeft.toString().length === 1) {
+        daysLeft = "0" + daysLeft
+      }
+
+      $(".days-left").html(daysLeft)
+      $(".hours-left").html(hoursLeft)
+      $(".min-left").html(minutesLeft)
+      $(".sec-left").html(secondsLeft)
+
+    }, interval);
+}
+
+function loadFeed() {
+    $.ajax({
+        type: 'GET',
+        url: dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON,
+        async: false,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(json) {
+
+            if (json.error) {
+                backupAnimation();
+                return;
+            }
+
+            deal = json.dealQueryResult.result.deals.deal;
+
+            if (json.dealQueryResult.result.deals.numberOfDeals == "0") {
+                backupAnimation();
+                return;
+            }
+
+            var dest = deal.arrivalAirport.airport.displayName;
+
+            $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
+            $("#destination").html(deal.arrivalAirport.airport.displayName);
+            $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
+
+            if (dest.length > 25) {
+                $("#destination").css("fontSize", "16px");
+            }
+
+            if (dest.indexOf("(") > -1) {
+
+                if (dest.length > 22) {
+                    $("#destination").css("fontSize", "20px");
+                } else if (dest.indexOf("(") > -1 && dest.length > 22) {
+                    $("#destination").css("fontSize", "20px");
+                } else {
+                    $("#destination").css("fontSize", "34px");
+                }
+            }
+
+            var rightcopy = "";
+
+            if (deal.travelClass.indexOf("ECO") > -1)
+                rightcopy += "Economy ";
+
+            if (deal.travelClass.indexOf("BUS") > -1)
+                rightcopy += "Business ";
+
+            if (deal.travelClass.indexOf("PRE") > -1)
+                rightcopy += "Premium Economy ";
+
+            if (deal.travelClass.indexOf("FIR") > -1)
+                rightcopy += "First class ";
+
+            if (deal.tripType.value == "O")
+                rightcopy += "One-way";
+            else
+                rightcopy += "return";
+
+            $("#price-right-copy").html(rightcopy);
+
+
+            if (imagesLoaded) {
+                initBanner();
+            } else {
+                si = setInterval(function() {
+                    if (imagesLoaded) {
+                        initBanner();
+                        clearInterval(si);
+                    }
+                }, 250)
+            }
+        },
+        error: function(e) {
+            console.log("ERROR");
+            console.log(e);
+            backupAnimation();
+        }
+
+    });
+}
+
+function initBanner() {
+
+    if (!Enabler.isVisible())
+        Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, initAnimation);
+    else
+        initAnimation();
+}
+
+function initAnimation() {
+
+    initCSS();
+    adjustCopyLayout();
+
+    setTimeout(function() {
+        startAnimation();
+    }, 240)
+}
 
 function initCSS() {
     // SET STARTING POSITIONS FOR ELEMENTS
@@ -75,22 +291,16 @@ function adjustCopyLayout() {
     // if($("#destination").text().length > 14){
     //     $("#destination").css("fontSize","24px");
     // }
+      if(backup){
 
-      setTimeout(function(){
-        var btnPosition = $("#f5-copy").outerWidth()
-        console.log(btnPosition)
-        btnPosition = btnPosition + 30
-        $(".button").css('left', btnPosition + 'px')
-        console.log(btnPosition)
-      }, 1000)
+      } else {
+        setTimeout(function(){
+          var btnPosition = $("#f5-copy").outerWidth()
+          btnPosition = btnPosition + 30
+          $(".button").css('left', btnPosition + 'px')
+        }, 1000)
+      }
 }
-
-// function adjustBtn() {
-//   var btnPosition = $("#f5-copy").outerWidth()
-//   console.log(btnPosition)
-//   // btnPosition = btnPosition + 10
-//   // $(".button").css('left', btnPosition + 'px')
-// }
 
 
 function f1CopyAnimation() {
@@ -139,12 +349,12 @@ function f3CopyAnimation() {
 
   var priceOnlyNumbers = price;
   //If the price has a comma
-  if(priceOnlyNumbers.indexOf(",") > -1) {
-    var res = priceOnlyNumbers.split(",")
-    var a = res[0]
-    var b = res[1]
-    res = a+b
-  }
+  // if(priceOnlyNumbers.indexOf(",") > -1) {
+  //   var res = priceOnlyNumbers.split(",")
+  //   var a = res[0]
+  //   var b = res[1]
+  //   res = a+b
+  // }
 
   // Adjusting asterix character
   var str = lastCharOfPrice[0].style.left
@@ -241,6 +451,22 @@ function startAnimation() {
     tl.from(price, 1.4, {alpha:0, y:-10, ease: Sine.easeOut}, "9.9")
     tl.to(terms, 1, {alpha:1, ease: Sine.easeOut}, "9.9")
     tl.to(ctaBtn, 1, {alpha:1, scale:1, ease: Sine.easeOut}, "9.7")
+
+    if(backup){
+      tl.from(".countdown-container", .4, {autoAlpha:0, ease:Sine.easeOut}, "10.2")
+      $("#price-left-copy").hide()
+      $("#price").hide()
+      $("#price-right-copy").hide()
+      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'20px', lineHeight:'20px', top:'5px'})
+      $("#sub-text").html("Until 6 June")
+      $("#from").html("THE FLY AWAY SALE").css({width: '218px', fontWeight: '700', fontSize:'22px', top:'4px'})
+      $(".button").css({top:'24px', left:'367px'})
+      $(".terms-wrapper").css({width:'670px', bottom:'5px'})
+    } else {
+      TweenLite.set($(".countdown-container"), {alpha:0})
+      TweenLite.set($(".from-line-01"), {alpha:0})
+      TweenLite.set($(".from-line-02"), {alpha:0})
+    }
 
     tl.to(redShapeEndFrame02, 2.3, {autoAlpha:0, rotation:100, scaleX: 1, scaleY: 1.4, x:-10, y:-140, ease: Sine.easeOut}, "4.6")
 

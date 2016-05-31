@@ -582,7 +582,7 @@ h4 {
     position: relative;
     display: block;
     margin-bottom: 2px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'brauerneue-regular';
     font-weight: normal;
     font-size: 13px;
     line-height: 13px;
@@ -857,4 +857,107 @@ h4 {
 #f4-copy div {
   text-align: center !important;
   clip: rect(25px, 50px, 69px, 0px) !important;
+}
+
+.countdown-container {
+  position: absolute;
+  width: 355px;
+  height: 80px;
+}
+.countdown-timer {
+  position: absolute;
+  margin: auto;
+  width: 160px;
+  top: -13px;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  display: table;
+  font-size: 21px;
+  line-height: 30px;
+  color: #fff;
+  z-index: 9200;
+}
+.time-units {
+  display: inline-block;
+  background: #a2050e;
+  width: 28px;
+  height: 30px;
+  border-radius: 7px;
+  margin: 0 2px;
+}
+.subtitle-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 160px;
+}
+.subtitle-text {
+  position: absolute;
+  top: 23px;
+  font-size: 12px;
+}
+.days-subtitle {
+  left: 14px;
+}
+.hours-subtitle {
+  left: 47px;
+}
+.mins-subtitle {
+  left: 87px;
+}
+.sec-subtitle {
+  left: 123px;
+}
+#sub-text {
+  position: absolute;
+  width: 140px;
+  left: 11px;
+  top: 41px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.line-time {
+  position: absolute;
+  top: 14px;
+  width: 28px;
+  height: 1px;
+  background: #a2050e;
+}
+
+.day-line {
+  left: 10px;
+}
+
+.hour-line {
+  left: 47px;
+}
+
+.min-line {
+  left: 84px;
+}
+
+.sec-line {
+  left: 121px;
+}
+.from-line-01 {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  background: #ee0000;
+  width: 80px;
+  height: 1px;
+  z-index: 4000;
+}
+.from-line-02 {
+  position: absolute;
+  top: 8px;
+  left: 81px;
+  background: #da0000;
+  width: 76px;
+  height: 1px;
+  z-index: 4000;
 }
