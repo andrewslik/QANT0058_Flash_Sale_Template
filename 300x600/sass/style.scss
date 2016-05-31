@@ -601,18 +601,18 @@ h4 {
 
 #f5-copy {
     position: absolute;
-    left: 10px;
+    left: 0px;
     top: 61px;
     height: 200px;
     line-height: 20px;
     z-index: 9000;
     cursor: pointer;
+    width: 300px;
 }
 #from{
     position: relative;
     display: block;
-/*    top: 0px;*/
-    width:260px;
+    width:300px;
     font-family: 'brauerneue-regular';
     font-weight: normal;
     font-size: 20px;
@@ -624,7 +624,7 @@ h4 {
     position: relative;
     display: block;
     margin-top: 10px;
-    width:260px;
+    width: 300px;
     font-size: 52px;
     line-height: 52px;
     font-family: 'brauerneue-regular';
@@ -635,7 +635,7 @@ h4 {
     position: relative;
     display: block;
     margin-top: 20px;
-    width:260px;
+    width: 300px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 15px;
@@ -647,7 +647,7 @@ h4 {
     position: relative;
     display: block;
     margin-top: 5px;
-    width:260px;
+    width: 300px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 15px;
@@ -675,7 +675,7 @@ h4 {
     text-align: center;
     z-index: 7000;
     -webkit-font-smoothing: antialiased;
-    width: 280px;
+    width: 300px;
 }
 #asterix-char{
     position: absolute;
@@ -685,20 +685,20 @@ h4 {
     color: #fff;
     -webkit-font-smoothing: antialiased;
 }
-#f4-copy {
-    position: absolute;
-    display: block;
-    top: 30px;
-    left: 15px;
-    width: 270px;
-    font-family: 'brauerneue-regular';
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 28px;
-    z-index: 4960;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-}
+// #f4-copy {
+//     position: absolute;
+//     display: block;
+//     top: 30px;
+//     left: 15px;
+//     width: 270px;
+//     font-family: 'brauerneue-regular';
+//     font-weight: normal;
+//     font-size: 22px;
+//     line-height: 28px;
+//     z-index: 4960;
+//     text-align: center;
+//     -webkit-font-smoothing: antialiased;
+// }
 #asterix-char {
     position: absolute;
     top: -8px;
@@ -863,8 +863,8 @@ h4 {
   text-align: center !important;
   -webkit-font-smoothing: antialiased !important;
   z-index: 3000 !important;
-  left: 20px !important;
-  width: 260px !important;
+  left: 25px!important;
+  width: 250px!important;
   text-align: center !important;
   line-height: 40px !important;
 }
@@ -877,8 +877,8 @@ h4 {
   text-align: center !important;
   -webkit-font-smoothing: antialiased !important;
   z-index: 2990 !important;
-  left: 20px !important;
-  width: 260px !important;
+  left: 25px!important;
+  width: 250px!important;
   text-align: center !important;
   line-height: 40px !important;
 }
@@ -891,4 +891,109 @@ h4 {
 #f4-copy div {
   text-align: center !important;
   clip: rect(19px, 50px, 69px, 0px) !important;
+}
+
+.countdown-container {
+  position: absolute;
+  width: 300px;
+  height: 160px;
+}
+.countdown-timer {
+  position: absolute;
+  margin: auto;
+  width: 300px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  display: table;
+  font-size: 29px;
+  line-height: 39px;
+  color: #fff;
+  top: 394px;
+  z-index: 9200;
+}
+.time-units {
+  display: inline-block;
+  background: #a2050e;
+  width: 39px;
+  height: 35px;
+  border-radius: 7px;
+  margin: 0 2px;
+}
+.subtitle-container {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 160px;
+}
+.subtitle-text {
+  position: absolute;
+  top: 23px;
+  font-size: 12px;
+}
+.days-subtitle {
+  left: 64px;
+}
+.hours-subtitle {
+  left: 110px;
+}
+.mins-subtitle {
+  left: 164px;
+}
+.sec-subtitle {
+  left: 214px;
+}
+#sub-text {
+  position: absolute;
+  width: 300px;
+  left: 0;
+  text-align: center;
+  top: 170px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.line-time {
+  position: absolute;
+  top: 17px;
+  width: 38px;
+  height: 1px;
+  background: #a2050e;
+}
+
+.day-line {
+  left: 55px;
+}
+
+.hour-line {
+  left: 105px;
+}
+
+.min-line {
+  left: 155px;
+}
+
+.sec-line {
+  left: 206px;
+}
+.from-line-01 {
+  position: absolute;
+  top: 8px;
+  left: 36px;
+  background: #ee0000;
+  width: 156px;
+  height: 1px;
+  z-index: 4000;
+}
+.from-line-02 {
+  position: absolute;
+  top: 8px;
+  left: 199px;
+  background: #cc0001;
+  width: 62px;
+  height: 1px;
+  z-index: 4200;
 }
