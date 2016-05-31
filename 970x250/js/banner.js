@@ -1,97 +1,98 @@
 // JavaScript Document
 var tl,
-    size = "970x250",
     clicktag,
+    size = "970x250",
     imagesLoaded = false,
-    backupmode = false,
-    deal = {};
+    backup = false;
 
-Enabler.setProfileId(1078746);
-var devDynamicContent = {};
+function politeInit() {
 
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1 = [{}];
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0]._id = 0;
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].id = 1;
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].reporting = "00405|QF|Airline|SFO Retail|Red Planet|May-16|SG1|DBM|Display|160x600|";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].from = "SYD";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].to = "PVG";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].fare = "ECO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=PVG&callback=callbackFunction";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].URL = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].URL.Url = "https://www.qantas.com/travel/airlines/international-flight-specials/global/en?departureAirportCode=BNE&arrivalAirportCode=SFO&travelClass=ECO&alt_cam=au:qf:rp:dcm:banner:sfor:::sg1:";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].show_price = true;
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].is_default = false;
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_160x600 = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_160x600.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SF-160x600.jpg";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_300x250 = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_300x250.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SF-300x250.jpg";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_300x600 = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_300x600.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SFO-300x600.jpg";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_728x90 = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_728x90.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SF-728x90.jpg";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_970x250 = {};
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].bkgd_970x250.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SFO-970x250.jpg";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame1_text_160x600 = "Where classic and quirky meet";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame1_text_300x250 = "Where classic and quirky meet";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame1_text_300x600 = "Where classic and quirky meet";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame1_text_728x90 = "Where classic and quirky meet";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame1_text_970x250 = "QANTAS FLY AWAY SALE";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame2_text_160x600 = "The City by the Bay is closer than you think";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame2_text_300x250 = "The City by the Bay is closer than you think";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame2_text_300x600 = "The City by the Bay is closer than you think";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame2_text_728x90 = "The City by the Bay is closer than you think";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame2_text_970x250 = "Fly away to Shanghai now";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame3_text_160x600 = "Now with direct services to SFO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame3_text_300x250 = "Now with direct services to SFO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame3_text_300x600 = "Now with direct services to SFO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame3_text_728x90 = "Now with direct services to SFO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].frame3_text_970x250 = "Fly Sydney to San Francisco<br>Now with direct services to SFO";
-devDynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].short_terms = "*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar nunc vitae rhoncus pellentesque. Sed non ullamcorper elit. Sed feugiat gravida odio a.";
-Enabler.setDevDynamicContent(devDynamicContent);
+    Enabler.setProfileId(1080399);
+    var devDynamicContent = {};
+
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1 = [{}];
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]._id = 0;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].id = 1;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].reporting = "00418|QF|Airline|Flash Sales|Red Planet|Jun-16|SG1|DBM|Display|160x600|SYD-HKG-price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].city_pair = "SYD-HKG";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.RawValue = "03/06/2016";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457251200000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.RawValue = "06/06/2016";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465196400000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-160x600.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x250_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x250_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-300x250.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x600_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_300x600_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-300x600.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_728x90_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-728x90.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1 = {};
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_970x250_1.Url = "https://s3-ap-southeast-2.amazonaws.com/qant0008/SYD-970x250.jpg";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_160x600 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x250 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_300x600 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_728x90 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_970x250 = "Qantas fly away sale";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_728x90 = "Fly away to now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to Hong Kong now";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_160x600 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms = "*Prices based on payment at qantas.com by BPAY or POLi. Sale ends 23:59 (AEST) 6 June 2016, unless sold out prior. Selected travel dates and conditions apply.";
+    Enabler.setDevDynamicContent(devDynamicContent);
+
+
+    clicktag = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url;
+
+    $(".terms").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms);
+    $("#f1-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame1_text_' + size]);
+    $("#f2-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame1_text_' + size]);
+    $("#f3-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
+    $("#f4-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
+
+    preloadAssets();
+
+    if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price)
+        backupAnimation();
+    else
+        loadFeed();
+        // backupAnimation()
+
+}
 
 function exit() {
     Enabler.exitOverride('clickthrough', clicktag);
 }
 
-
-function politeInit() {
-    clicktag = dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].URL.Url;
-
-    $('#f1-copy').html(dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0]['frame1_text_' + size]);
-    $('#f2-copy').html(dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0]['frame1_text_' + size]);
-    $('#f3-copy').html(dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0]['frame2_text_' + size]);
-    $('#f4-copy').html(dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0]['frame2_text_' + size]);
-    $('.terms').html(dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].short_terms);
-
-    preloadAssets();
-
-    if (dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].show_price)
-        loadFeed();
-
-    if (!dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].show_price || dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].is_default) {
-        initCSS();
-        backupAnimation();
-        adjustCopyLayout();
-    }
-}
-
 function preloadAssets() {
     var i = [
-      "base-image-01.jpg",
-      "base-image-02.jpg",
-      "logos-qantas.png",
-      "logos-partners.png",
-      "shape-mask.svg",
-      "shape-red.svg",
-      "shape-white.svg",
-      "shape-blue.svg",
-      "shape-red-end-frame.svg",
-      "shape-red-end-frame2.svg"
-    ]
-    preloadimages(i).done(function(images) {
-        console.log("loaded");
+        "close.gif",
+        "shape-blue.svg",
+        "shape-mask.svg",
+        "shape-red-end-frame.svg",
+        "shape-red-end-frame2.svg",
+        "shape-red.svg",
+        "shape-white.svg"
+    ];
 
-        // ONCE IMAGES ARE PRE-LOADED BEGIN ANIMATION
+    preloadimages(i).done(function(images) {
+
         imagesLoaded = true;
 
         // TERMS & CONDITIONS FUNCTIONALITY / COMMENT OUT IF NOT NEEDED
@@ -104,56 +105,131 @@ function preloadAssets() {
             $(".terms-wrapper").hide();
             $(".overlay").show();
         });
-
     })
+}
+function backupAnimation() {
+    backup = true;
+    countdown();
 
+
+    if (imagesLoaded) {
+        initBanner();
+    } else {
+        si = setInterval(function() {
+            if (imagesLoaded) {
+                initBanner();
+                clearInterval(si);
+            }
+        }, 250)
+    }
+}
+function countdown() {
+
+    var now = new Date();
+
+    var eventTime =  dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue;
+    var currentTime = now.getTime();
+
+    var diffTime = eventTime - currentTime; //better to handle this in Controller to avoid timezone problem
+    var duration = moment.duration(diffTime, 'milliseconds');
+    var interval = 1000;
+
+    setInterval(function(){
+      duration = moment.duration(duration - interval, 'milliseconds');
+      // console.log( (duration.days()+ "d:" + duration.hours() + "h:" + duration.minutes() + "m:" + duration.seconds() + "s") )
+
+      //Update ountdown timer
+      var daysLeft    = duration.days(),
+          hoursLeft   = duration.hours(),
+          minutesLeft = duration.minutes(),
+          secondsLeft = duration.seconds();
+
+      //To make into double digits
+      if(secondsLeft.toString().length === 1) {
+        secondsLeft = "0" + secondsLeft
+      }
+      if(minutesLeft.toString().length === 1) {
+        minutesLeft = "0" + minutesLeft
+      }
+      if(hoursLeft.toString().length === 1) {
+        hoursLeft = "0" + hoursLeft
+      }
+      if(daysLeft.toString().length === 1) {
+        daysLeft = "0" + daysLeft
+      }
+
+      $(".days-left").html(daysLeft)
+      $(".hours-left").html(hoursLeft)
+      $(".min-left").html(minutesLeft)
+      $(".sec-left").html(secondsLeft)
+
+    }, interval);
 }
 
-function loadFeed() {
 
+function loadFeed() {
     $.ajax({
         type: 'GET',
-        url: dynamicContent.SFID00405QFAirlineSFO_RetailRed_PlanetMay16_Sheet1[0].JSON,
-        async: true,
+        url: dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON,
+        async: false,
         contentType: "application/json",
         dataType: 'json',
         success: function(json) {
+
+            if (json.error) {
+                backupAnimation();
+                return;
+            }
+
             deal = json.dealQueryResult.result.deals.deal;
 
             if (json.dealQueryResult.result.deals.numberOfDeals == "0") {
-                console.log("deals:" + json.dealQueryResult.result.deals.numberOfDeals);
-                initCSS();
                 backupAnimation();
-                adjustCopyLayout();
                 return;
             }
 
             var dest = deal.arrivalAirport.airport.displayName;
 
-            $("#from").html("Fly from " + deal.departureAirport.airport.displayName + " to");
+            $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
             $("#destination").html(deal.arrivalAirport.airport.displayName);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
+
+            if (dest.length > 25) {
+                $("#destination").css("fontSize", "16px");
+            }
+
+            if (dest.indexOf("(") > -1) {
+
+                if (dest.length > 22) {
+                    $("#destination").css("fontSize", "20px");
+                } else if (dest.indexOf("(") > -1 && dest.length > 22) {
+                    $("#destination").css("fontSize", "20px");
+                } else {
+                    $("#destination").css("fontSize", "34px");
+                }
+            }
 
             var rightcopy = "";
 
             if (deal.travelClass.indexOf("ECO") > -1)
-                rightcopy += "Economy<br />";
+                rightcopy += "Economy ";
 
             if (deal.travelClass.indexOf("BUS") > -1)
-                rightcopy += "Business<br />";
+                rightcopy += "Business ";
 
             if (deal.travelClass.indexOf("PRE") > -1)
-                rightcopy += "Premium Economy<br />";
+                rightcopy += "Premium Economy ";
 
             if (deal.travelClass.indexOf("FIR") > -1)
-                rightcopy += "First class<br />";
+                rightcopy += "First class ";
 
             if (deal.tripType.value == "O")
-                rightcopy += "one way";
+                rightcopy += "One-way";
             else
                 rightcopy += "return";
 
             $("#price-right-copy").html(rightcopy);
+
 
             if (imagesLoaded) {
                 initBanner();
@@ -167,20 +243,30 @@ function loadFeed() {
             }
         },
         error: function(e) {
+            console.log("ERROR");
             console.log(e);
-            initCSS();
             backupAnimation();
-            adjustCopyLayout();
         }
+
     });
 }
 
 function initBanner() {
+
+    if (!Enabler.isVisible())
+        Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, initAnimation);
+    else
+        initAnimation();
+}
+
+function initAnimation() {
+
     initCSS();
     adjustCopyLayout();
+
     setTimeout(function() {
-      startAnimation();
-    }, 250)
+        startAnimation();
+    }, 240)
 }
 
 function initCSS() {
@@ -195,7 +281,7 @@ function initCSS() {
     TweenLite.set($("#red-shape-end-frame2"), {autoAlpha: 0, rotation: -50, y: 290, scaleX: .5,scaleY: .5});
 
     TweenLite.set($("#red-shape-base"), {scaleX: 2, scaleY: 2, overwrite: "none", force3D: false});
-    TweenLite.set($(".terms-wrapper"), {alpha:0})
+    // TweenLite.set($(".terms-wrapper"), {alpha:0})
     TweenLite.set($(".button"), {alpha:0, scale:.5})
 }
 
@@ -217,7 +303,7 @@ function adjustCopyLayout() {
             // $("#f5-copy").css("top","20px");
         }
     }
-    
+
     // var f3CopyWidth = $('#f5-copy').outerWidth(true);
     // var ctaBtnOffset = 30 + f3CopyWidth;
     // $(".button").css("left",ctaBtnOffset);
@@ -230,15 +316,19 @@ function adjustCopyLayout() {
 
 
 function startAnimation() {
-    console.log("Play animation")
     // HIDES PRE-LOADER CIRCLE AND SHOWS BANNER
     $(".container").show();
     $(".loader").hide();
 
     //RE-POSITION CTA BUTTON DEPENDING ON WIDTH OF TEXT LOCKUP
-    var f3CopyWidth = $('#f5-copy').outerWidth(true);
-    var ctaBtnOffset = 60 + f3CopyWidth;
-    $(".button").css("left",ctaBtnOffset);
+    if(backup) {
+
+    } else {
+      var f3CopyWidth = $('#f5-copy').outerWidth(true);
+      var ctaBtnOffset = 60 + f3CopyWidth;
+      $(".button").css("left",ctaBtnOffset);
+    }
+
 
 
     // WE USE GREENSOCK ANIMATION PLATFORM, SEE THIS FOR MORE INFO > http://greensock.com/timelinelite
@@ -276,86 +366,33 @@ function startAnimation() {
     tl.to("#red-shape-end-frame2", 2.5, {autoAlpha:.3, rotation:-120, scaleX: 1.5, scaleY: 1.5, x:240, y:-20, ease: Sine.easeOut}, "8.7")
     tl.to("#red-shape-end-frame", 2.5, { autoAlpha: .2, scaleX: .8, scaleY: .8, x:420, y: -250, rotation: 0, ease: Sine.easeOut}, "8.7")
 
-
-    // tl.from(".terms-wrapper", 1, {alpha: 0, ease: Sine.easeOut}, "11.2")
-    // tl.from(".button", 1.7, {alpha: 0, scaleX: .5, scaleY: .5, ease: Expo.easeOut}, "11")
-
     tl.from("#f5-copy", 1, {alpha:0, y:-10, ease: Sine.easeOut}, "9.9")
     tl.from("#price", 1.4, {alpha:0, y:-10, ease: Sine.easeOut}, "9.9")
-    tl.to(".terms", 1, {alpha:1, ease: Sine.easeOut}, "9.9")
+    tl.from(".terms-wrapper", 1, {alpha:0, ease: Sine.easeOut}, "9.9")
     tl.to(".button", 1, {alpha:1, scale:1, ease: Sine.easeOut}, "9.7")
 
+    if(backup){
+      tl.from(".countdown-container", .4, {autoAlpha:0, ease:Sine.easeOut}, "10.2")
+      $("#price-left-copy").hide()
+      $("#price").hide()
+      $("#price-right-copy").hide()
+      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'45px'})
+      $("#sub-text").html("Until 6 June")
+      $("#from").html("THE FLY AWAY SALE").css({width: '398px', fontSize:'52px', top:'21px'})
+      $(".button").css({top:'103px', left:'730px'})
+      $(".terms-wrapper").css({width:'670px', bottom:'5px'})
+    } else {
+      TweenLite.set($(".countdown-container"), {alpha:0})
+      TweenLite.set($(".from-line-01"), {alpha:0})
+      TweenLite.set($(".from-line-02"), {alpha:0})
+    }
+
     tl.add(f3CopyAnimation, "0")
-
-
     // TESTING - goto specific time of animation
     //tl.seek(8);
     // tl.pause(2)
 }
 
-function backupAnimation(){
-  console.log("Backup animation")
-  // HIDES PRE-LOADER CIRCLE AND SHOWS BANNER
-  $(".container").show();
-  $(".loader").hide();
-  // $("#f1-2-copy").hide();
-  // $("#f1-copy").hide();
-
-  // $(".bg-image").hide();
-
-  // WE USE GREENSOCK ANIMATION PLATFORM, SEE THIS FOR MORE INFO > http://greensock.com/timelinelite
-
-  /* tl = new TimelineLite();
-
-  tl.to(".shapes", 2.3, {alpha: 1,rotation: -160, transformOrigin: "50% 50%", ease: Sine.easeOut }, "0")
-  tl.from("#red-shape", .5, {alpha:1, transformOrigin: "50% 50%", x: 135, y: 85, ease: Back.easeOut}, "0")
-  tl.from("#blue-shape", .5, {alpha:1, transformOrigin: "50% 50%", x: 98, y: 55, ease: Back.easeOut}, "0")
-
-  tl.to("#mask-shape", 1.5, {rotation: -60, transformOrigin: "50% 50%" , scaleX: 1.7, scaleY: 1.7, x: -2000, y: -1425, ease: Sine.easeInOut}, ".3")
-  tl.to("#red-shape", 1, {rotation: -80, scaleX: 1.1, scaleY: 1.1, x: 211, y: 35, ease: Sine.easeInOut}, ".3")
-  tl.to("#blue-shape", 1, {rotation: -140, scaleX: 1.1, scaleY: 1.1, x: 13, y: 117, ease: Sine.easeInOut}, ".3")
-
-  tl.to("#mask-shape", .7, { rotation: 0, scaleX: 5.8, scaleY: 5.8, x: -1350, y: -1315, ease: Expo.easeIn}, ".9")
-  tl.to("#blue-shape", 1.3, {alpha: 1, rotation: -330, scaleX: 5, scaleY: 5, x:-430, y: 560, ease: Expo.easeInOut}, ".9")
-  tl.to("#red-shape", 1.3, {alpha: 1, rotation: -130, scaleX: 13, scaleY: 13, x:530, y:-630, ease: Expo.easeInOut}, ".9")
-
-  tl.from("#f1-copy", 1.5, {alpha: 0, ease: Sine.easeOut}, "1.4")
-  tl.to("#f1-copy", 1, {alpha: 0, ease: Sine.easeOut}, "3.5")
-
-  tl.from(".bg-image", 2, {alpha: 0, ease: Sine.easeOut}, "0")
-  tl.from("#f1-2-copy", 1.5, {alpha: 0,ease: Sine.easeOut}, "4.5")
-
-  //FRAME 02
-
-  //FRAME 03
-  tl.from(".bg-image-02", 1.5, {alpha: 0, ease: Sine.easeOut}, "3.5")
-  tl.to(".bg-image", 1.5, {alpha: 0, ease: Sine.easeOut}, "7")
-
-  tl.to("#f1-2-copy", 1, {alpha: 0,ease: Sine.easeOut}, "7")
-
-
-  // tl.to("#red-shape", .7, {x: 895, y: 75, ease: Sine.easeIn}, "7.8")
-  tl.to("#f1-copy", .5, {alpha: 0, ease: Sine.easeIn}, "7.5")
-  tl.from("#f2-copy", 1.5, {alpha: 0, ease: Sine.easeOut}, "7.5")
-  tl.from("#f2-sub-line", 1.5, {alpha: 0, ease: Sine.easeOut}, "7.5")
-  // tl.to("#red-shape-end-frame2", 2.3, {autoAlpha:.4, rotation:0, scaleX: 1, scaleY: 1, x:-100, y:-304, ease: Sine.easeOut}, "7.3")
-
-  //FRAME 04
-  // tl.to("#f2-copy", .5, {alpha: 0, ease: Sine.easeIn}, "11.7")
-  // tl.to("#f2-sub-line", .5, {alpha: 0, ease: Sine.easeOut}, "11.7")
-  tl.to("#white-shape", 2, {alpha:1, rotation:-10, x:590, y: -170, scaleX:1, scaleY:1, ease: Sine.easeInOut, force3D:false}, "7.1")
-
-  tl.to(".logos-qantas", 1.3, {x:0, y:-50, scaleX:1, scaleY:1, ease: Sine.easeInOut}, "7.1")
-  tl.from(".logos-partners", 2, {alpha: 0, y:20, transformOrigin: "100% 50%", scaleX:.5, scaleY:.5, ease: Sine.easeOut}, "7.6")
-
-  tl.to("#red-shape-end-frame2", 2.5, {autoAlpha:.3, rotation:-120, scaleX: 1.5, scaleY: 1.5, x:240, y:-20, ease: Sine.easeInOut}, "7")
-  tl.to("#red-shape-end-frame", 2.5, { autoAlpha: .2, scaleX: .8, scaleY: .8, x:420, y: -250, rotation: 0, ease: Sine.easeOut}, "7")
-
-  // tl.from("#f3-copy", 1, {alpha: 0, y: -10, ease: Sine.easeOut}, "12.4")
-  tl.from(".terms-wrapper", 1, {alpha: 0, ease: Sine.easeOut}, "8.2")
-  tl.from(".button", 1.7, {alpha: 0, scaleX: .5, scaleY: .5, ease: Expo.easeOut}, "9") */
-
-}
 
 // SPLIT TEXT FUNCTION ------------------------------------------------------------
 function f1CopyAnimation() {
@@ -407,23 +444,17 @@ function f3CopyAnimation() {
     str = str.substring(0, str.length - 2)
     str = str - 8
     str = str + "px"
-    lastCharOfPrice.css({
-      'top': '-15px',
-      'fontSize': '30px',
-      'color': '#fff',
-      'left': str
-    })
   } else {
     str = str.substring(0, str.length - 2)
     str = str - 5
     str = str + "px"
+  }
     lastCharOfPrice.css({
       'top': '-15px',
       'fontSize': '30px',
       'color': '#fff',
       'left': str
     })
-  }
   var priceOnlyNumbers = price;
   priceOnlyNumbers = priceOnlyNumbers.children.length
   //If the price has a comma e.g. $1,000
@@ -438,9 +469,6 @@ function f3CopyAnimation() {
   var limit = priceOnlyNumbers - 1;
   var lets = shuffleArray(mySplitText.chars);
   var letters = lets;
-
-  console.log(priceOnlyNumbers)
-  console.log(limit)
 
   // Starts at index 1 because we are animating the numbers. index 0 = "$"
   for(var index = 1; index < limit; index++) {

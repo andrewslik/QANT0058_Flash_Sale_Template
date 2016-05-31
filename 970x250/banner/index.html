@@ -9,15 +9,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="SplitText.min.js"></script>
     <script src="ScrambleTextPlugin.min.js"></script>
+    <script src="SplitText.min.js"></script>
 
     <script language="javascript">
         if (Enabler.isInitialized())
             init();
         else
             Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
-
 
         function init() {
             if (Enabler.isPageLoaded())
@@ -75,6 +74,8 @@
             <!-- ------- FRAME 03 ------- -->
             <div class="copy" id="f5-copy">
                 <div id="destination-lockup">
+                    <span class="from-line-01"></span>
+                    <span class="from-line-02"></span>
                     <span id="from"></span>
                     <span id="destination"></span>
                 </div>
@@ -82,6 +83,7 @@
                     <span id="price-left-copy">from</span>
                     <span id="price"></span>
                     <span id="price-right-copy"></span>
+                    <span id="sub-text"></span>
                 </div>
             </div>
 
@@ -109,6 +111,23 @@
             </div>
             <img id="red-shape-end-frame" src="shape-red-end-frame2.svg" />
             <img id="red-shape-end-frame2" src="shape-red-end-frame2.svg" />
+
+            <!-- Countdown container -->
+            <div class="countdown-container">
+                <div class="countdown-timer top-numbers">
+                    <div class="day-line line-time"></div>
+                    <div class="hour-line line-time"></div>
+                    <div class="min-line line-time"></div>
+                    <div class="sec-line line-time"></div>
+                    <span class="time-units days-left"></span>:<span class="time-units hours-left"></span>:<span class="time-units min-left"></span>:<span class="time-units sec-left"></span>
+                    <span class="subtitle-container">
+                  <div class="subtitle-text days-subtitle">DAYS</div>
+                  <div class="subtitle-text hours-subtitle">HOURS</div>
+                  <div class="subtitle-text mins-subtitle">MINS</div>
+                  <div class="subtitle-text sec-subtitle">SECS</div>
+                </span>
+                </div>
+            </div>
 
             <div class="bg-image">
                 <img class="bg-image-01" src="base-image-01.jpg" alt="" />

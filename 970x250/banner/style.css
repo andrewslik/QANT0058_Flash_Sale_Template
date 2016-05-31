@@ -699,7 +699,7 @@ body.mrec .container {
     position: relative;
     display: block;
     margin-bottom: 2px;
-    font-family: Arial, sans-serif;
+    font-family: 'brauerneue-regular';
     font-weight: 300;
     font-size: 21px;
     line-height: 21px;
@@ -715,7 +715,7 @@ body.mrec .container {
     display: block;
     top: 15px;
     left: 0px;
-    font-size: 60px;
+    font-size: 69px;
     line-height: 63px;
     font-family: 'brauerneue-regular';
     text-align: left;
@@ -739,7 +739,7 @@ body.mrec .container {
     position: relative;
     display: inline-block;
     margin-left: 10px;
-    top: -6px;
+    top: -13px;
     font-family: Arial, sans-serif;
     font-weight: 300;
     font-size: 15px;
@@ -760,7 +760,7 @@ body.mrec .container {
     position: relative;
     display: inline-block;
     font-family: 'brauerneue-bold';
-    font-size: 60px;
+    font-size: 69px;
     color: #fff;
     text-align: center;
     z-index: 7000;
@@ -803,7 +803,7 @@ body.mrec .container {
 }
 .terms-wrapper {
   position: absolute;
-  width: 500px;
+  width: 700px;
   left: 33px;
   bottom: 11px;
   text-align: left;
@@ -891,4 +891,107 @@ body.mrec .container {
     .f1 {
         line-height: 19px;
     }
+}
+.countdown-container {
+  position: absolute;
+  width: 300px;
+  height: 80px;
+}
+.countdown-timer {
+  position: absolute;
+  margin: auto;
+  width: 300px;
+  top: -322px;
+  left: 410px;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  display: table;
+  font-size: 39px;
+  line-height: 49px;
+  color: #fff;
+  z-index: 9200;
+}
+.time-units {
+  display: inline-block;
+  background: #a2050e;
+  width: 49px;
+  height: 45px;
+  border-radius: 7px;
+  margin: 0 2px;
+}
+.subtitle-container {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 160px;
+}
+.subtitle-text {
+  position: absolute;
+  top: 23px;
+  font-size: 12px;
+}
+.days-subtitle {
+  left: 45px;
+}
+.hours-subtitle {
+  left: 103px;
+}
+.mins-subtitle {
+  left: 171px;
+}
+.sec-subtitle {
+  left: 232px;
+}
+#sub-text {
+  position: absolute;
+  width: 260px;
+  left: 395px;
+  text-align: center;
+  top: -54px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.line-time {
+  position: absolute;
+  top: 22px;
+  width: 48px;
+  height: 1px;
+  background: #a2050e;
+}
+
+.day-line {
+  left: 32px;
+}
+
+.hour-line {
+  left: 94px;
+}
+
+.min-line {
+  left: 158px;
+}
+
+.sec-line {
+  left: 219px;
+}
+.from-line-01 {
+  position: absolute;
+  top: 28px;
+  left: 7px;
+  background: #ee0000;
+  width: 186px;
+  height: 1px;
+  z-index: 4000;
+}
+.from-line-02 {
+  position: absolute;
+  top: 28px;
+  left: 191px;
+  background: #da0000;
+  width: 178px;
+  height: 1px;
+  z-index: 4200;
 }
