@@ -23,10 +23,10 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465196400000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=PVG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
@@ -72,7 +72,6 @@ function politeInit() {
         backupAnimation();
     else
         loadFeed();
-        // backupAnimation();
 
 }
 
@@ -213,16 +212,16 @@ function loadFeed() {
             var rightcopy = "";
 
             if (deal.travelClass.indexOf("ECO") > -1)
-                rightcopy += "Economy ";
+                rightcopy += "Economy<br/>";
 
             if (deal.travelClass.indexOf("BUS") > -1)
-                rightcopy += "Business ";
+                rightcopy += "Business<br />";
 
             if (deal.travelClass.indexOf("PRE") > -1)
-                rightcopy += "Premium Economy ";
+                rightcopy += "Premium Economy<br />";
 
             if (deal.travelClass.indexOf("FIR") > -1)
-                rightcopy += "First class ";
+                rightcopy += "First class<br />";
 
             if (deal.tripType.value == "O")
                 rightcopy += "One-way";
@@ -288,9 +287,9 @@ function initCSS() {
 function adjustCopyLayout() {
     // RE-POSITION TEXT ELEMENTS DEPENDING ON WHAT VALUES ARE ENTERED IN THE HTML
     // IF THE DESTINATION TEXT IS TOO LONG TO FIT ON ONE LINE, WE REDUCE THE FONT SIZE
-    // if($("#destination").text().length > 14){
-    //     $("#destination").css("fontSize","24px");
-    // }
+    if($("#destination").text().length > 14){
+        $("#destination").css({'font-size':'24px', 'line-height':'35px'});
+    }
       if(backup){
 
       } else {
@@ -461,7 +460,7 @@ function startAnimation() {
       $("#sub-text").html("Until 6 June")
       $("#from").html("THE FLY AWAY SALE").css({width: '218px', fontWeight: '700', fontSize:'22px', top:'4px'})
       $(".button").css({top:'24px', left:'367px'})
-      $(".terms-wrapper").css({width:'670px', bottom:'5px'})
+      $(".terms-wrapper").css({bottom:'5px'})
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
       TweenLite.set($(".from-line-01"), {alpha:0})

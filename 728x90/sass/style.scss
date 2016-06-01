@@ -609,6 +609,8 @@ h4 {
     line-height: 11px;
     letter-spacing: 1px;
     text-align: left;
+    vertical-align: middle;
+    top: -6px;
 }
 
 #price-right-copy {
@@ -621,6 +623,8 @@ h4 {
     line-height: 11px;
     letter-spacing: 1px;
     text-align: left;
+    vertical-align: middle;
+    top: -6px;
 }
 
 #price-lockup {
@@ -704,7 +708,7 @@ h4 {
 
 .terms-wrapper {
     position: absolute;
-    width: 480px;
+    width: 710px;
     left: 15px;
     bottom: 7px;
     text-align: left;

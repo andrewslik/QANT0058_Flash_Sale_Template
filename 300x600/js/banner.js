@@ -23,8 +23,8 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1465196400000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
@@ -72,7 +72,6 @@ function politeInit() {
         backupAnimation();
     else
         loadFeed();
-        // backupAnimation();
 
 }
 
@@ -188,8 +187,16 @@ function loadFeed() {
 
             var dest = deal.arrivalAirport.airport.displayName;
 
+            if (dest.indexOf("(") > -1){
+              dest = dest.split(" ")
+              var a = dest[0]
+              var b = dest[1]
+              dest = a + "<br />" + b
+              // $("#destination").css({fontSize:'50px', lineHeight:'47px'})
+            }
+
             $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
-            $("#destination").html(deal.arrivalAirport.airport.displayName);
+            $("#destination").html(dest);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
             if (dest.length > 25) {
@@ -197,6 +204,10 @@ function loadFeed() {
             }
 
             if (dest.indexOf("(") > -1) {
+
+                if (dest.length <= 22) {
+                  $("#destination").css({fontSize:'50px', lineHeight:'43px'})
+                }
 
                 if (dest.length > 22) {
                     $("#destination").css("fontSize", "20px");
@@ -285,8 +296,8 @@ function initCSS() {
 function adjustCopyLayout() {
   // IF THE DESTINATION TEXT IS TOO LONG TO FIT ON ONE LINE, WE REDUCE THE FONT SIZE
   if($("#destination").text().length > 12){
-      $("#destination").css("fontSize","40px");
-      $("#destination").css("lineHeight","40px");
+      $("#destination").css("fontSize","50px");
+      $("#destination").css("lineHeight","47px");
   }
 
   //RE-POSITION CTA BUTTON DEPENDING ON HEIGHT OF TEXT LOCKUP

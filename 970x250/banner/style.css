@@ -736,6 +736,7 @@ body.mrec .container {
     text-align: left;
     top: -13px;
     left: 10px;
+    vertical-align: middle;
 }
 #price-right-copy {
     position: relative;
@@ -748,6 +749,7 @@ body.mrec .container {
     line-height: 16px;
     letter-spacing: 1px;
     text-align: left;
+    vertical-align: middle;
 }
 #price-lockup {
     position: relative;
@@ -781,7 +783,7 @@ body.mrec .container {
 .button {
     position: absolute;
     display: block;
-    top: 108px;
+    top: 116px;
     left: 29px;
     background-color: #ffffff;
     color: #e0001b;
@@ -805,7 +807,7 @@ body.mrec .container {
 }
 .terms-wrapper {
   position: absolute;
-  width: 700px;
+  width: 920px;
   left: 33px;
   bottom: 11px;
   text-align: left;
