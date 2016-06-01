@@ -26,7 +26,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=PVG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
@@ -190,7 +190,7 @@ function loadFeed() {
 
             var dest = deal.arrivalAirport.airport.displayName;
 
-            $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
+            $("#from").html("Fly " + deal.departureAirport.airport.displayName + " to");
             $("#destination").html(dest);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
@@ -439,13 +439,14 @@ function startAnimation() {
       $("#price-right-copy").hide()
       $("#destination").html("Hong Kong & Shanghai").css({fontSize:'28px', lineHeight:'28px', top:'8px'})
       $("#sub-text").html("Until 6 June")
-      $("#from").html("THE FLY AWAY SALE").css({width: '260px', fontWeight: '700', fontSize:'25px', top:'-19px'})
+      $("#fas-tagline").html("THE FLY AWAY SALE")
       $(".button").css({top:'155px'})
-
+      $("#from").hide()
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      TweenLite.set($(".from-line-01"), {alpha:0})
-      TweenLite.set($(".from-line-02"), {alpha:0})
+      $("#fas-tagline").html("THE FLY AWAY SALE")
+      // TweenLite.set($(".from-line-01"), {alpha:0})
+      // TweenLite.set($(".from-line-02"), {alpha:0})
     }
 
     tl.from(f5Copy, 1, {alpha:0, y:-10, ease: Sine.easeOut}, "9.9")
