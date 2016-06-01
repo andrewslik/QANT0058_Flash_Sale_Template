@@ -72,7 +72,6 @@ function politeInit() {
         backupAnimation();
     else
         loadFeed();
-
 }
 
 function exit() {
@@ -106,6 +105,7 @@ function preloadAssets() {
         });
     })
 }
+
 function backupAnimation() {
     backup = true;
     countdown();
@@ -122,48 +122,50 @@ function backupAnimation() {
         }, 250)
     }
 }
+
 function countdown() {
 
     var now = new Date();
 
-    var eventTime =  dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue;
+    var eventTime = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue;
     var currentTime = now.getTime();
 
     var diffTime = eventTime - currentTime; //better to handle this in Controller to avoid timezone problem
     var duration = moment.duration(diffTime, 'milliseconds');
     var interval = 1000;
 
-    setInterval(function(){
-      duration = moment.duration(duration - interval, 'milliseconds');
-      // console.log( (duration.days()+ "d:" + duration.hours() + "h:" + duration.minutes() + "m:" + duration.seconds() + "s") )
+    setInterval(function() {
+        duration = moment.duration(duration - interval, 'milliseconds');
+        // console.log( (duration.days()+ "d:" + duration.hours() + "h:" + duration.minutes() + "m:" + duration.seconds() + "s") )
 
-      //Update ountdown timer
-      var daysLeft    = duration.days(),
-          hoursLeft   = duration.hours(),
-          minutesLeft = duration.minutes(),
-          secondsLeft = duration.seconds();
+        //Update ountdown timer
+        var daysLeft = duration.days(),
+            hoursLeft = duration.hours(),
+            minutesLeft = duration.minutes(),
+            secondsLeft = duration.seconds();
 
-      //To make into double digits
-      if(secondsLeft.toString().length === 1) {
-        secondsLeft = "0" + secondsLeft
-      }
-      if(minutesLeft.toString().length === 1) {
-        minutesLeft = "0" + minutesLeft
-      }
-      if(hoursLeft.toString().length === 1) {
-        hoursLeft = "0" + hoursLeft
-      }
-      if(daysLeft.toString().length === 1) {
-        daysLeft = "0" + daysLeft
-      }
+        //To make into double digits
+        if (secondsLeft.toString().length === 1) {
+            secondsLeft = "0" + secondsLeft
+        }
+        if (minutesLeft.toString().length === 1) {
+            minutesLeft = "0" + minutesLeft
+        }
+        if (hoursLeft.toString().length === 1) {
+            hoursLeft = "0" + hoursLeft
+        }
+        if (daysLeft.toString().length === 1) {
+            daysLeft = "0" + daysLeft
+        }
 
-      $(".days-left").html(daysLeft)
-      $(".hours-left").html(hoursLeft)
-      $(".min-left").html(minutesLeft)
-      $(".sec-left").html(secondsLeft)
+        $(".days-left").html(daysLeft)
+        $(".hours-left").html(hoursLeft)
+        $(".min-left").html(minutesLeft)
+        $(".sec-left").html(secondsLeft)
 
     }, interval);
 }
+
 function loadFeed() {
     $.ajax({
         type: 'GET',
@@ -187,15 +189,15 @@ function loadFeed() {
 
             var dest = deal.arrivalAirport.airport.displayName;
 
-            if (dest.indexOf("(") > -1){
-              dest = dest.split(" ")
-              var a = dest[0]
-              var b = dest[1]
-              dest = a + "<br />" + b
-              // $("#destination").css({fontSize:'50px', lineHeight:'47px'})
+            if (dest.indexOf("(") > -1) {
+                dest = dest.split(" ")
+                var a = dest[0]
+                var b = dest[1]
+                dest = a + "<br />" + b
+                    // $("#destination").css({fontSize:'50px', lineHeight:'47px'})
             }
 
-            $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
+            $("#from").html("Fly " + deal.departureAirport.airport.displayName + " to");
             $("#destination").html(dest);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
@@ -206,7 +208,10 @@ function loadFeed() {
             if (dest.indexOf("(") > -1) {
 
                 if (dest.length <= 22) {
-                  $("#destination").css({fontSize:'50px', lineHeight:'43px'})
+                    $("#destination").css({
+                        fontSize: '50px',
+                        lineHeight: '43px'
+                    })
                 }
 
                 if (dest.length > 22) {
@@ -259,7 +264,6 @@ function loadFeed() {
 
     });
 }
-
 function initBanner() {
 
     if (!Enabler.isVisible())
@@ -277,7 +281,6 @@ function initAnimation() {
         startAnimation();
     }, 240)
 }
-
 function initCSS() {
     // SET STARTING POSITIONS FOR ELEMENTS
     TweenLite.set($("#blue-shape"), {alpha: .9, rotation: 50, scaleX: 0.4, scaleY: 0.4, x: 60, y: 80, overwrite: "none", force3D: false});
@@ -302,7 +305,7 @@ function adjustCopyLayout() {
 
   //RE-POSITION CTA BUTTON DEPENDING ON HEIGHT OF TEXT LOCKUP
   var f3CopyHeight = $('#f5-copy').outerHeight(true);
-  var ctaBtnOffset = 64 + f3CopyHeight + 20;
+  var ctaBtnOffset = 61 + f3CopyHeight + 20;
   $(".button").css("top",ctaBtnOffset);
 }
 
@@ -460,12 +463,12 @@ function startAnimation() {
       $("#price-right-copy").hide()
       $("#destination").html("Hong Kong<br />& Shanghai").css({fontSize:'42px', lineHeight:'48px', fontWeight:'700', marginTop:'37px'})
       $("#sub-text").html("Until 6 June")
-      $("#from").html("THE FLY AWAY SALE").css({width: '300px', fontWeight: '700', fontSize:'25px'})
+      $("#fas-tagline").html("THE FLY AWAY SALE")
       $(".button").css({top:'336px'})
+      $("#from").hide()
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      TweenLite.set($(".from-line-01"), {alpha:0})
-      TweenLite.set($(".from-line-02"), {alpha:0})
+      $("#fas-tagline").html("THE FLY AWAY SALE").css('margin-bottom', '10px')
     }
 
     tl.to(redShapeEndFrame02, 2.5, {autoAlpha:0, rotation:30, scaleX: 1.6, scaleY: 1.6, x:150, y:-70, ease: Sine.easeOut}, "5.7")
