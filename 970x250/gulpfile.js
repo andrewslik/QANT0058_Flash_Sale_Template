@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 gulp.task('js', function () {
     gulp.src(['js/**/*.js'])
         .pipe(concat('banner.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('banner/'))
         .pipe(notify({
             message: 'Finished minifying JavaScript'

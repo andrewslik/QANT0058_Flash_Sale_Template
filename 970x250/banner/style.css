@@ -611,9 +611,12 @@ body.mrec .container {
     text-align: center;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -.5px;
-    top: 0;
+    top: 96px;
     bottom: 0;
-    margin: auto;
+    right:0;
+    /*margin: auto;*/
+    margin-left: auto;
+    margin-right: auto;
     text-transform: capitalize !important;
 }
 #f2-copy {
@@ -629,9 +632,10 @@ body.mrec .container {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -.5px;
-  top: 0;
   bottom: 0;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  top: 96px;
   text-transform: capitalize !important;
 }
 #f1-copy div {
@@ -656,9 +660,10 @@ body.mrec .container {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -.5px;
-  top: 0;
+  top: 96px;
   bottom: 0;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 #f4-copy {
   position: absolute;
@@ -673,9 +678,10 @@ body.mrec .container {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -.5px;
-  top: 0;
+  top: 96px;
   bottom: 0;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 #f3-copy div {
   text-align: center !important;
@@ -903,10 +909,12 @@ body.mrec .container {
 }
 .countdown-timer {
   position: absolute;
-  margin: auto;
+  /*margin: auto;*/
+  margin-left: auto;
+  margin-right: auto;
   width: 300px;
-  top: -322px;
-  left: 410px;
+  top: -142px;
+  left: 420px;
   text-align: center;
   bottom: 0;
   right: 0;
@@ -950,9 +958,9 @@ body.mrec .container {
 #sub-text {
   position: absolute;
   width: 260px;
-  left: 395px;
+  left: 405px;
   text-align: center;
-  top: -54px;
+  top: 20px;
   font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -1006,8 +1014,10 @@ body.mrec .container {
     margin-bottom: 2px;
     font-family: 'brauerneue-regular';
     font-weight: 300;
-    font-size: 54px;
+    font-size: 50px;
     line-height: 21px;
     text-align: left;
     top:21px;
+    letter-spacing: -.5px;
+    width: 280px;
 }

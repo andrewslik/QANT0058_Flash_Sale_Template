@@ -196,7 +196,7 @@ function loadFeed() {
               // dest = a + "<br />" + b
             }
 
-            $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
+            $("#from").html("Fly " + deal.departureAirport.airport.displayName + " to");
             $("#destination").html(dest);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
@@ -389,7 +389,7 @@ function startAnimation() {
       $("#price-right-copy").hide()
       $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'45px'})
       $("#sub-text").html("Until 6 June")
-      $("#fas-tagline").html("THE FLY AWAY SALE")
+      $("#fas-tagline").html("THE FLY AWAY SALE").css('width','410px')
       $(".button").css({top:'103px', left:'730px'})
       $(".terms-wrapper").css({width:'670px', bottom:'5px'})
       $("#from").hide()
@@ -455,22 +455,25 @@ function f3CopyAnimation() {
   var lastCharOfPrice = priceChild.last()
 
   // Adjusting asterix character
-  var str = lastCharOfPrice[0].style.left
-  if(str.length >= 5) {
-    str = str.substring(0, str.length - 2)
-    str = str - 8
-    str = str + "px"
-  } else {
-    str = str.substring(0, str.length - 2)
-    str = str - 5
-    str = str + "px"
+  if(!backup) {
+    var str = lastCharOfPrice[0].style.left
+    if(str.length >= 5) {
+      str = str.substring(0, str.length - 2)
+      str = str - 8
+      str = str + "px"
+    } else {
+      str = str.substring(0, str.length - 2)
+      str = str - 5
+      str = str + "px"
+    }
+      lastCharOfPrice.css({
+        'top': '-15px',
+        'fontSize': '30px',
+        'color': '#fff',
+        'left': str
+      })
   }
-    lastCharOfPrice.css({
-      'top': '-15px',
-      'fontSize': '30px',
-      'color': '#fff',
-      'left': str
-    })
+
   var priceOnlyNumbers = price;
   priceOnlyNumbers = priceOnlyNumbers.children.length
   //If the price has a comma e.g. $1,000
