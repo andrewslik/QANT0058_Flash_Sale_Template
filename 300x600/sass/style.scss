@@ -846,7 +846,9 @@ h4 {
 }
 .countdown-timer {
     position: absolute;
-    margin: auto;
+    // margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 300px;
     top: 0;
     left: 0;
@@ -857,7 +859,7 @@ h4 {
     font-size: 29px;
     line-height: 39px;
     color: #fff;
-    top: 394px;
+    top: 260px;
     z-index: 9200;
 }
 .time-units {
