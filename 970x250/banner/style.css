@@ -995,7 +995,19 @@ body.mrec .container {
   top: 28px;
   left: 191px;
   background: #da0000;
-  width: 178px;
+  width: 198px;
   height: 1px;
   z-index: 4200;
+}
+
+#fas-tagline {
+    position: relative;
+    display: block;
+    margin-bottom: 2px;
+    font-family: 'brauerneue-regular';
+    font-weight: 300;
+    font-size: 54px;
+    line-height: 21px;
+    text-align: left;
+    top:21px;
 }

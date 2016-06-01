@@ -70,7 +70,6 @@ function politeInit() {
 
     if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price)
         backupAnimation();
-        // loadFeed()
     else
         loadFeed();
 
@@ -191,10 +190,10 @@ function loadFeed() {
             var dest = deal.arrivalAirport.airport.displayName;
 
             if(dest.indexOf("(") > -1) {
-              dest = dest.split(" ")
-              var a = dest[0]
-              var b = dest[1]
-              dest = a + "<br />" + b
+              // dest = dest.split(" ")
+              // var a = dest[0]
+              // var b = dest[1]
+              // dest = a + "<br />" + b
             }
 
             $("#from").html("From " + deal.departureAirport.airport.displayName + " to");
@@ -316,9 +315,6 @@ function adjustCopyLayout() {
         }
     }
 
-    // var f3CopyWidth = $('#f5-copy').outerWidth(true);
-    // var ctaBtnOffset = 30 + f3CopyWidth;
-    // $(".button").css("left",ctaBtnOffset);
 
 }
 
@@ -336,9 +332,12 @@ function startAnimation() {
     if(backup) {
 
     } else {
-      var f3CopyWidth = $('#f5-copy').outerWidth(true);
-      var ctaBtnOffset = 60 + f3CopyWidth;
-      $(".button").css("left",ctaBtnOffset);
+      setTimeout(function(){
+        var f3CopyWidth = $('#f5-copy').outerWidth(true);
+        var ctaBtnOffset = 60 + f3CopyWidth;
+        $(".button").css("left",ctaBtnOffset);
+      },240)
+
     }
 
 
@@ -390,13 +389,18 @@ function startAnimation() {
       $("#price-right-copy").hide()
       $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'45px'})
       $("#sub-text").html("Until 6 June")
-      $("#from").html("THE FLY AWAY SALE").css({width: '398px', fontSize:'52px', top:'21px'})
+      $("#fas-tagline").html("THE FLY AWAY SALE")
       $(".button").css({top:'103px', left:'730px'})
       $(".terms-wrapper").css({width:'670px', bottom:'5px'})
+      $("#from").hide()
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      TweenLite.set($(".from-line-01"), {alpha:0})
-      TweenLite.set($(".from-line-02"), {alpha:0})
+      $("#fas-tagline").html("THE FLY AWAY SALE").css({position:'absolute',top:'-28px',fontSize:'37px'})
+      $(".from-line-01").css({top:'-21px',width:'227px',left:'5px'})
+      $(".from-line-02").css({top:'-21px',left:'230px',width:'38px'})
+      $("#from").css({left:'4px','-webkit-font-smoothing':'antialiased',marginTop:'20px'})
+      $("#destination").css({top:'0px', fontSize:'54px'})
+      $("#price-lockup").css({top:'2px'})
     }
 
     tl.add(f3CopyAnimation, "0")
