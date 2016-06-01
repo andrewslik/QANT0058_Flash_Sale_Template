@@ -191,7 +191,7 @@ function loadFeed() {
 
             var dest = deal.arrivalAirport.airport.displayName;
 
-            $("#from").html("From<br>" + deal.departureAirport.airport.displayName + " to");
+            $("#from").html("Fly " + deal.departureAirport.airport.displayName + " to");
             $("#destination").html(deal.arrivalAirport.airport.displayName);
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
@@ -499,11 +499,11 @@ function startAnimation() {
       $("#destination").html("Hong Kong<br />& Shanghai").css({fontSize: '26px', lineHeight: '28px'})
       $("#sub-text").html("Until 6 June")
       $("#from").html("THE FLY AWAY SALE").css({width: '140px', fontWeight: '700'})
+      $("#fas-tagline").css('margin-bottom','0px')
 
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      TweenLite.set($(".from-line-01"), {alpha:0})
-      TweenLite.set($(".from-line-02"), {alpha:0})
+      $("#fas-tagline").html("THE FLY AWAY SALE")
     }
 
     tl.to(redShapeEndFrame02, 2.5, {autoAlpha: 0, rotation: -50, scaleX: 1.3, scaleY: 1.3, x: 100, y: 50, ease: Sine.easeOut}, "5.7")
