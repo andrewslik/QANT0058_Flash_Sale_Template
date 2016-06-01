@@ -298,13 +298,11 @@ function adjustCopyLayout() {
     }
 
     //RE-POSITION CTA BUTTON DEPENDING ON HEIGHT OF TEXT LOCKUP
-    if(backup){
-
-    } else {
-      var f3CopyHeight = $('#f5-copy').outerHeight(true);
-      var ctaBtnOffset = 81 + f3CopyHeight + 20;
-      $(".button").css("top", ctaBtnOffset);
-    }
+    // if(backup){
+    //
+    // } else {
+    //
+    // }
 
 }
 
@@ -447,6 +445,12 @@ function startAnimation() {
     // HIDES PRE-LOADER CIRCLE AND SHOWS BANNER
     $(".container").show();
     $(".loader").hide();
+
+    setTimeout(function(){
+      var f3CopyHeight = $('#f5-copy').outerHeight(true);
+      var ctaBtnOffset = 81 + f3CopyHeight + 20;
+      $(".button").css("top", ctaBtnOffset);
+    },200)
 
     //Start Animation
     var tl = new TimelineLite(),

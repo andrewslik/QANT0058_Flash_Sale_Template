@@ -901,7 +901,9 @@ h4 {
 }
 .countdown-timer {
   position: absolute;
-  margin: auto;
+  // margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 160px;
   top: 0;
   text-align: center;
@@ -911,7 +913,7 @@ h4 {
   font-size: 21px;
   line-height: 30px;
   color: #fff;
-  top: 350px;
+  top: 208px;
   z-index: 9200;
 }
 .time-units {
@@ -1000,7 +1002,8 @@ h4 {
 #fas-tagline{
     position: relative;
     display: block;
-    width: 140px;
+    width: 160px;
+    left: -10px;
     font-family: 'brauerneue-regular';
     font-weight: normal;
     font-size: 19px;
