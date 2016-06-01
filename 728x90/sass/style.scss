@@ -401,21 +401,20 @@ h3 {
 h4 {
     font-size: 25px;
 }
-.loader{
+.loader {
     margin-left: auto;
     margin-right: auto;
     width: 726px;
     height: 88px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     border: 1px solid #e2e2e2;
     position: relative;
 }
-
-.loader img{
+.loader img {
     position: absolute;
-    top:20px;
-    left:339px;
+    top: 20px;
+    left: 339px;
 }
 .container {
     display: none;
@@ -429,8 +428,8 @@ h4 {
     position: absolute;
     width: 726px;
     height: 88px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     border: 1px solid #e2e2e2;
     z-index: 8000;
 }
@@ -438,13 +437,12 @@ h4 {
     position: absolute;
     width: 728px;
     height: 90px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     margin: 0 auto;
     background-color: #ee0000;
     clip: rect(0px, 728px, 90px, 0px);
 }
-
 .logos {
     position: absolute;
     z-index: 5000;
@@ -488,24 +486,24 @@ h4 {
     width: 245px;
     height: 219px;
     top: -700px;
-    left: 0px;
+    left: 0;
     z-index: 4940;
 }
 #red-shape-end-frame2 {
     position: absolute;
     width: 245px;
     height: 219px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 4950;
 }
 #white-shape {
-  position: absolute;
-  width: 174px;
-  height: 70px;
-  bottom: 0px;
-  left: -28px;
-  z-index: 4950;
+    position: absolute;
+    width: 174px;
+    height: 70px;
+    bottom: 0;
+    left: -28px;
+    z-index: 4950;
 }
 #white-circle {
     width: 420px;
@@ -517,7 +515,6 @@ h4 {
     left: -60px;
     z-index: 5000;
 }
-
 #mask-shape {
     position: absolute;
     width: 6866px;
@@ -539,7 +536,7 @@ h4 {
     position: absolute;
     z-index: 100;
 }
-.shapes{
+.shapes {
     position: absolute;
     top: -80px;
     left: 220px;
@@ -547,17 +544,15 @@ h4 {
     height: 250px;
     z-index: 6500;
 }
-
 .text-container {
-  width: 300px;
-  height: 250px;
-  left: 0;
-  top: 60px;
-  background: pink;
-  z-index: 3000;
-  position: relative;
+    width: 300px;
+    height: 250px;
+    left: 0;
+    top: 60px;
+    background: pink;
+    z-index: 3000;
+    position: relative;
 }
-
 #shapes-01 {
     position: absolute;
     top: 0;
@@ -567,18 +562,15 @@ h4 {
     z-index: 6500;
     display: none;
 }
-
 #f5-copy {
-  position: absolute;
-  display: inline-block;
-  top: 19px;
-  left: 16px;
-  z-index: 9000;
-  cursor: pointer;
+    position: absolute;
+    display: inline-block;
+    top: 19px;
+    left: 16px;
+    z-index: 9000;
+    cursor: pointer;
 }
-
-
-#from{
+#from {
     position: relative;
     display: block;
     margin-bottom: 2px;
@@ -587,7 +579,11 @@ h4 {
     font-size: 13px;
     line-height: 13px;
     text-align: left;
-/*    -webkit-font-smoothing: antialiased; */
+    /*    -webkit-font-smoothing: antialiased; */
+
+    margin-bottom: 1px;
+    margin-top: 0px;
+    -webkit-font-smoothing: antialiased;
 }
 #destination {
     position: relative;
@@ -612,7 +608,6 @@ h4 {
     vertical-align: middle;
     top: -6px;
 }
-
 #price-right-copy {
     position: relative;
     display: inline-block;
@@ -626,7 +621,6 @@ h4 {
     vertical-align: middle;
     top: -6px;
 }
-
 #price-lockup {
     position: absolute;
     display: inline-block;
@@ -650,7 +644,7 @@ h4 {
     -webkit-font-smoothing: antialiased;
     top: 6px;
 }
-#asterix-char{
+#asterix-char {
     position: absolute;
     top: -8px;
     font-family: 'brauerneue-bold';
@@ -700,12 +694,10 @@ h4 {
     cursor: pointer;
     z-index: 9999;
 }
-
-.button:hover{
+.button:hover {
     background-color: #aa0015;
     color: #ffffff;
 }
-
 .terms-wrapper {
     position: absolute;
     width: 710px;
@@ -721,8 +713,8 @@ h4 {
     pointer-events: none;
 }
 .underline-text {
-  font-weight: 700;
-  text-decoration: underline;
+    font-weight: 700;
+    text-decoration: underline;
 }
 .overlay-trigger {
     z-index: 9901;
@@ -760,7 +752,6 @@ h4 {
     max-height: 180px;
     overflow-y: scroll;
 }
-
 /* Invisible button for background clickthrough. */
 #background_exit_dc {
     position: absolute;
@@ -792,178 +783,178 @@ h4 {
     }
 }
 #f1-copy {
-  position: absolute !important;
-  top: 15px !important;
-  color: #fff !important;
-  font-size: 54px !important;
-  text-align: center !important;
-  -webkit-font-smoothing: antialiased !important;
-  z-index: 3000 !important;
-  left: 0 !important;
-  width: 728px !important;
-  text-align: center !important;
-  text-transform: capitalize !important;
+    position: absolute !important;
+    top: 15px !important;
+    color: #fff !important;
+    font-size: 54px !important;
+    text-align: center !important;
+    -webkit-font-smoothing: antialiased !important;
+    z-index: 3000 !important;
+    left: 0 !important;
+    width: 728px !important;
+    text-align: center !important;
+    text-transform: capitalize !important;
 }
 #f2-copy {
-  position: absolute !important;
-  top: 15px !important;
-  color: #fff !important;
-  font-size: 54px !important;
-  text-align: center !important;
-  -webkit-font-smoothing: antialiased !important;
-  z-index: 2990 !important;
-  left: 0 !important;
-  width: 728px !important;
-  text-align: center !important;
-  text-transform: capitalize !important;
+    position: absolute !important;
+    top: 15px !important;
+    color: #fff !important;
+    font-size: 54px !important;
+    text-align: center !important;
+    -webkit-font-smoothing: antialiased !important;
+    z-index: 2990 !important;
+    left: 0 !important;
+    width: 728px !important;
+    text-align: center !important;
+    text-transform: capitalize !important;
 }
-
 #f1-copy div {
-  text-align: center !important;
-  clip: rect(0px, 50px, 28px, 0px) !important;
+    text-align: center !important;
+    clip: rect(0px, 50px, 28px, 0px) !important;
 }
-
 #f2-copy div {
-  text-align: center !important;
-  clip: rect(29px, 50px, 69px, 0px) !important;
+    text-align: center !important;
+    clip: rect(29px, 50px, 69px, 0px) !important;
 }
-
 #f3-copy {
-  position: absolute !important;
-  top: 20px !important;
-  color: #fff !important;
-  font-size: 40px !important;
-  text-align: center !important;
-  -webkit-font-smoothing: antialiased !important;
-  z-index: 3000 !important;
-  left: 0 !important;
-  width: 692px !important;
-  text-align: center !important;
-  line-height: 45px !important;
+    position: absolute !important;
+    top: 20px !important;
+    color: #fff !important;
+    font-size: 40px !important;
+    text-align: center !important;
+    -webkit-font-smoothing: antialiased !important;
+    z-index: 3000 !important;
+    left: 0 !important;
+    width: 692px !important;
+    text-align: center !important;
+    line-height: 45px !important;
 }
 #f4-copy {
-  position: absolute !important;
-  top: 20px !important;
-  color: #fff !important;
-  font-size: 40px !important;
-  text-align: center !important;
-  -webkit-font-smoothing: antialiased !important;
-  z-index: 2990 !important;
-  left: 0 !important;
-  width: 692px !important;
-  text-align: center !important;
-  line-height: 45px !important;
+    position: absolute !important;
+    top: 20px !important;
+    color: #fff !important;
+    font-size: 40px !important;
+    text-align: center !important;
+    -webkit-font-smoothing: antialiased !important;
+    z-index: 2990 !important;
+    left: 0 !important;
+    width: 692px !important;
+    text-align: center !important;
+    line-height: 45px !important;
 }
-
 #f3-copy div {
-  text-align: center !important;
-  clip: rect(0px, 50px, 24px, 0px) !important;
+    text-align: center !important;
+    clip: rect(0px, 50px, 24px, 0px) !important;
 }
-
 #f4-copy div {
-  text-align: center !important;
-  clip: rect(25px, 50px, 69px, 0px) !important;
+    text-align: center !important;
+    clip: rect(25px, 50px, 69px, 0px) !important;
 }
-
 .countdown-container {
-  position: absolute;
-  width: 355px;
-  height: 80px;
+    position: absolute;
+    width: 355px;
+    height: 80px;
 }
 .countdown-timer {
-  position: absolute;
-  margin: auto;
-  width: 160px;
-  top: -13px;
-  text-align: center;
-  bottom: 0;
-  right: 0;
-  display: table;
-  font-size: 21px;
-  line-height: 30px;
-  color: #fff;
-  z-index: 9200;
+    position: absolute;
+    margin: auto;
+    width: 160px;
+    top: -13px;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    display: table;
+    font-size: 21px;
+    line-height: 30px;
+    color: #fff;
+    z-index: 9200;
 }
 .time-units {
-  display: inline-block;
-  background: #a2050e;
-  width: 28px;
-  height: 30px;
-  border-radius: 7px;
-  margin: 0 2px;
+    display: inline-block;
+    background: #a2050e;
+    width: 28px;
+    height: 30px;
+    border-radius: 7px;
+    margin: 0 2px;
 }
 .subtitle-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 160px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 160px;
 }
 .subtitle-text {
-  position: absolute;
-  top: 23px;
-  font-size: 12px;
+    position: absolute;
+    top: 23px;
+    font-size: 12px;
 }
 .days-subtitle {
-  left: 14px;
+    left: 14px;
 }
 .hours-subtitle {
-  left: 47px;
+    left: 47px;
 }
 .mins-subtitle {
-  left: 87px;
+    left: 87px;
 }
 .sec-subtitle {
-  left: 123px;
+    left: 123px;
 }
 #sub-text {
-  position: absolute;
-  width: 140px;
-  left: 11px;
-  top: 41px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 300;
+    position: absolute;
+    width: 140px;
+    left: 11px;
+    top: 41px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
 }
-
 .line-time {
-  position: absolute;
-  top: 14px;
-  width: 28px;
-  height: 1px;
-  background: #a2050e;
+    position: absolute;
+    top: 14px;
+    width: 28px;
+    height: 1px;
+    background: #a2050e;
 }
-
 .day-line {
-  left: 10px;
+    left: 10px;
 }
-
 .hour-line {
-  left: 47px;
+    left: 47px;
 }
-
 .min-line {
-  left: 84px;
+    left: 84px;
 }
-
 .sec-line {
-  left: 121px;
+    left: 121px;
 }
 .from-line-01 {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  background: #ee0000;
-  width: 80px;
-  height: 1px;
-  z-index: 4000;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    background: #ee0000;
+    width: 80px;
+    height: 1px;
+    z-index: 4000;
 }
 .from-line-02 {
-  position: absolute;
-  top: 8px;
-  left: 81px;
-  background: #da0000;
-  width: 76px;
-  height: 1px;
-  z-index: 4000;
+    position: absolute;
+    top: 8px;
+    left: 81px;
+    background: #d30000;
+    width: 76px;
+    height: 1px;
+    z-index: 4000;
+}
+#fas-tagline{
+    position: relative;
+    display: block;
+    top: 4px;
+    margin-bottom: 2px;
+    font-family: 'brauerneue-regular';
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 13px;
+    text-align: left;
 }
