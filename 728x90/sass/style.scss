@@ -949,8 +949,9 @@ h4 {
     height: 1px;
     z-index: 4000;
 }
-#fas-tagline{
-    position: relative;
+.fas-tagline-01,
+.fas-tagline-02 {
+    position: absolute;
     display: block;
     top: 4px;
     margin-bottom: 2px;
@@ -959,4 +960,11 @@ h4 {
     font-size: 22px;
     line-height: 13px;
     text-align: left;
+    width: 179px;
+}
+.fas-tagline-01 div {
+  clip: rect(-5px, 22px, 4px, 0);
+}
+.fas-tagline-02 div {
+  clip: rect(5px, 22px, 17px, 0);
 }

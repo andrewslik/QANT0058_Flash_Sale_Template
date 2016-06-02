@@ -26,7 +26,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=PVG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
@@ -395,6 +395,23 @@ function f3CopyAnimation() {
   }
 }
 
+function fasTaglineAnimation() {
+  var tl = new TimelineLite();
+
+  var mySplitText = new SplitText(".fas-tagline-01", {type: "chars", absolute:true});
+  var mySplitText02 = new SplitText(".fas-tagline-02", {type: "chars", absolute:true});
+
+  var lets = shuffleLetters(mySplitText.chars, mySplitText02.chars);
+  var letters = lets[0];
+  var letters02 = lets[1];
+
+  var randomChars = "1234567890";
+
+  for(var index = 0; index < letters.length; index++){
+    tl.from([letters[index], letters02[index]], .4, {alpha:0, overwrite:"all",scrambleText:{text:"x", chars:randomChars, revealDelay:0, speed:.3}, delay:10}, index*0.08)
+  }
+}
+
 
 // MAIN ANIMATION --------------------------------------------------------------------
 
@@ -456,17 +473,18 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'20px', lineHeight:'20px', top:'5px'})
+      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'20px', lineHeight:'20px', top:'20px'})
       $("#sub-text").html("Until 6 June")
-      $("#fas-tagline").html("THE FLY AWAY SALE")
       $(".button").css({top:'24px', left:'367px'})
       $(".terms-wrapper").css({bottom:'5px'})
       $("#from").hide()
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      $("#fas-tagline").html("THE FLY AWAY SALE").css({fontSize:'15px',top:'0px'})
+      $(".fas-tagline-01").css({fontSize:'15px',top:'0px'})
+      $(".fas-tagline-02").css({fontSize:'15px',top:'0px'})
+
       $("#f5-copy").css({top:'14px',left:'16px'})
-      $("#from").css({'margin-bottom': '1px', 'margin-top': '0px','-webkit-font-smoothing': 'antialiased'})
+      $("#from").css({'margin-bottom': '1px', 'margin-top': '13px','-webkit-font-smoothing': 'antialiased'})
       $("#destination").css({'font-size': '24px', 'line-height':'22px', 'font-weight':900})
       $(".from-line-01").css('top','4px')
       $(".from-line-02").css('top','4px')
@@ -478,6 +496,7 @@ function startAnimation() {
     tl.to(redShapeEndFrame02, 2, {autoAlpha:.4, rotation:50, scaleX: 1.5, scaleY: 1.5, x:130, y:-10, ease: Sine.easeOut}, "9.2")
 
     tl.add(f3CopyAnimation, "0")
+    tl.add(fasTaglineAnimation, "0")
 
     // tl.pause(2)
 }
