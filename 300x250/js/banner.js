@@ -3,7 +3,8 @@ var tl,
     clicktag,
     size = "300x250",
     imagesLoaded = false,
-    backup = false;
+    backup = false,
+    bgImage;
 
 function politeInit() {
 
@@ -69,6 +70,7 @@ function politeInit() {
     $("#cta-text").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta)
 
     $(".bg-image-01").attr("src",dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['bkgd_' + size + '_1'].Url);
+    bgImage = dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['bkgd_' + size + '_1'].Url;
 
     $("#destination").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame3_text_' + size])
 
@@ -93,7 +95,8 @@ function preloadAssets() {
         "shape-red-end-frame.svg",
         "shape-red-end-frame2.svg",
         "shape-red.svg",
-        "shape-white.svg"
+        "shape-white.svg",
+        bgImage
     ];
 
     preloadimages(i).done(function(images) {
