@@ -1,7 +1,7 @@
 // JavaScript Document
 var tl,
     clicktag,
-    size = "300x250",
+    size = "728x90",
     imagesLoaded = false,
     backup = false;
 
@@ -67,6 +67,8 @@ function politeInit() {
     $("#f3-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
     $("#f4-copy").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame2_text_' + size]);
     $("#cta-text").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta)
+
+    $(".bg-image-01").attr("src",dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['bkgd_' + size + '_1'].Url);
 
     preloadAssets();
 
