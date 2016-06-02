@@ -544,7 +544,7 @@ function startAnimation() {
       $("#price").hide()
       $("#price-right-copy").hide()
       $("#destination").css({fontSize: '36px', lineHeight: '28px', marginTop:'40px'})
-      $("#sub-text").html("Until 6 June")
+      $("#sub-text").html("Sale ends in")
       $("#from").hide()
       $(".fas-tagline-01").css('margin-bottom','0px')
 

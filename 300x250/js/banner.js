@@ -81,6 +81,7 @@ function politeInit() {
     else
         loadFeed();
 
+
 }
 
 function exit() {
@@ -464,7 +465,7 @@ function startAnimation() {
       $("#price").hide()
       $("#price-right-copy").hide()
       $("#destination").css({fontSize:'32px', lineHeight:'28px', top:'8px'})
-      $("#sub-text").html("Until 6 June")
+      $("#sub-text").html("Sale ends in")
       $(".button").css({top:'155px'})
       $("#from").hide()
     } else {

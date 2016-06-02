@@ -397,7 +397,7 @@ function startAnimation() {
       $("#price").hide()
       $("#price-right-copy").hide()
       $("#destination").css({fontSize:'58px', lineHeight:'30px', top:'72px'})
-      $("#sub-text").html("Until 6 June")
+      $("#sub-text").html("Sale ends in")
       // $("#fas-tagline").html("THE FLY AWAY SALE").css('width','410px')
       $(".button").css({top:'103px', left:'730px'})
       $(".terms-wrapper").css({width:'920px', bottom:'5px'})

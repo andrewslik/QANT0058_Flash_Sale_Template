@@ -81,6 +81,7 @@ function politeInit() {
         backupAnimation();
     else
         loadFeed();
+
 }
 
 function exit() {
@@ -314,9 +315,9 @@ function adjustCopyLayout() {
   }
 
   //RE-POSITION CTA BUTTON DEPENDING ON HEIGHT OF TEXT LOCKUP
-  var f3CopyHeight = $('#f5-copy').outerHeight(true);
-  var ctaBtnOffset = 61 + f3CopyHeight + 20;
-  $(".button").css("top",ctaBtnOffset);
+  // var f3CopyHeight = $('#f5-copy').outerHeight(true);
+  // var ctaBtnOffset = 61 + f3CopyHeight + 20;
+  // $(".button").css("top",ctaBtnOffset);
 }
 
 function f1CopyAnimation() {
@@ -437,6 +438,10 @@ function startAnimation() {
     $(".container").show();
     $(".loader").hide();
 
+    var f3CopyHeight = $('#f5-copy').outerHeight(true);
+    var ctaBtnOffset = 61 + f3CopyHeight + 20;
+    $(".button").css("top",ctaBtnOffset);
+
     //Start Animation
     var tl = new TimelineLite(),
         f5Copy = $("#f5-copy"),
@@ -489,7 +494,7 @@ function startAnimation() {
       $("#price").hide()
       $("#price-right-copy").hide()
       $("#destination").css({fontSize:'59px', lineHeight:'48px', fontWeight:'700', marginTop:'71px'})
-      $("#sub-text").html("Until 6 June")
+      $("#sub-text").html("Sale ends in")
       $(".button").css({top:'336px'})
       $("#from").hide()
     } else {
