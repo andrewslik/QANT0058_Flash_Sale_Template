@@ -51,7 +51,7 @@ function politeInit() {
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to Hong Kong now";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_160x600 = "show JSON price";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
-  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
+  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "Shanghai";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "show JSON price";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta = "See deals";
@@ -69,6 +69,8 @@ function politeInit() {
     $("#cta-text").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta)
 
     $(".bg-image-01").attr("src",dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['bkgd_' + size + '_1'].Url);
+
+    $("#destination").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame3_text_' + size])
 
     preloadAssets();
 
@@ -368,7 +370,6 @@ function f3CopyAnimation() {
 
   // Adjusting asterix character
   var str = lastCharOfPrice[0].style.left
-  console.log(str)
   if(str.length >= 5) {
     str = str.substring(0, str.length - 2)
     str = str - 12
@@ -483,7 +484,7 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").html("Hong Kong<br />& Shanghai").css({fontSize:'42px', lineHeight:'48px', fontWeight:'700', marginTop:'37px'})
+      $("#destination").css({fontSize:'59px', lineHeight:'48px', fontWeight:'700', marginTop:'71px'})
       $("#sub-text").html("Until 6 June")
       $(".button").css({top:'336px'})
       $("#from").hide()

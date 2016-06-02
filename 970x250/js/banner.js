@@ -53,7 +53,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "show JSON price";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "Shanghai";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta = "See deals";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms = "*Prices based on payment at qantas.com by BPAY or POLi. Sale ends 23:59 (AEST) 6 June 2016, unless sold out prior. Selected travel dates and conditions apply.";
     Enabler.setDevDynamicContent(devDynamicContent);
@@ -68,6 +68,8 @@ function politeInit() {
     $("#cta-text").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta)
 
     $(".bg-image-01").attr("src",dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['bkgd_' + size + '_1'].Url);
+
+    $("#destination").html(dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0]['frame3_text_' + size])
 
     preloadAssets();
 
@@ -200,7 +202,8 @@ function loadFeed() {
             }
 
             $("#from").html("Fly " + deal.departureAirport.airport.displayName + " to");
-            $("#destination").html(dest);
+            $("#destination").html(deal.arrivalAirport.airport.displayName);
+            console.log($("#destination")[0].innerText)
             $("#price").html(deal.price.currencySymbol + deal.price.value + "<span id='asterix-char'>*</span>");
 
             if (dest.length > 25) {
@@ -390,9 +393,9 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'72px'})
+      $("#destination").css({fontSize:'58px', lineHeight:'30px', top:'72px'})
       $("#sub-text").html("Until 6 June")
-      $("#fas-tagline").html("THE FLY AWAY SALE").css('width','410px')
+      // $("#fas-tagline").html("THE FLY AWAY SALE").css('width','410px')
       $(".button").css({top:'103px', left:'730px'})
       $(".terms-wrapper").css({width:'670px', bottom:'5px'})
       $("#from").hide()
@@ -400,8 +403,6 @@ function startAnimation() {
       TweenLite.set($(".countdown-container"), {alpha:0})
       $(".fas-tagline-01").css({position:'absolute',top:'-28px',fontSize:'37px'})
       $(".fas-tagline-02").css({position:'absolute',top:'-28px',fontSize:'37px'})
-      // $(".from-line-01").css({top:'-21px',width:'227px',left:'5px'})
-      // $(".from-line-02").css({top:'-21px',left:'230px',width:'38px'})
       $("#from").css({left:'4px','-webkit-font-smoothing':'antialiased',marginTop:'20px'})
       $("#destination").css({top:'0px', fontSize:'54px'})
       $("#price-lockup").css({top:'2px'})
