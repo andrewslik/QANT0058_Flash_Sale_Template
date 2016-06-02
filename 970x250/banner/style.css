@@ -1008,8 +1008,9 @@ body.mrec .container {
   z-index: 4200;
 }
 
-#fas-tagline {
-    position: relative;
+.fas-tagline-01,
+.fas-tagline-02 {
+    position: absolute;
     display: block;
     margin-bottom: 2px;
     font-family: 'brauerneue-regular';
@@ -1019,5 +1020,12 @@ body.mrec .container {
     text-align: left;
     top:21px;
     letter-spacing: -.5px;
-    width: 280px;
+    width: 380px;
+}
+.fas-tagline-01 div {
+  clip: rect(-11px, 42px, 9px, 0);
+}
+
+.fas-tagline-02 div {
+  clip: rect(10px, 42px, 31px, 0);
 }

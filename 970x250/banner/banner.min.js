@@ -26,7 +26,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = true;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=PVG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].bkgd_160x600_1 = {};
@@ -69,7 +69,8 @@ function politeInit() {
     preloadAssets();
 
     if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price)
-        backupAnimation();
+        // backupAnimation();
+        loadFeed();
     else
         loadFeed();
 
@@ -387,7 +388,7 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'45px'})
+      $("#destination").html("Hong Kong & Shanghai").css({fontSize:'45px', lineHeight:'30px', top:'72px'})
       $("#sub-text").html("Until 6 June")
       $("#fas-tagline").html("THE FLY AWAY SALE").css('width','410px')
       $(".button").css({top:'103px', left:'730px'})
@@ -395,15 +396,17 @@ function startAnimation() {
       $("#from").hide()
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
-      $("#fas-tagline").html("THE FLY AWAY SALE").css({position:'absolute',top:'-28px',fontSize:'37px'})
-      $(".from-line-01").css({top:'-21px',width:'227px',left:'5px'})
-      $(".from-line-02").css({top:'-21px',left:'230px',width:'38px'})
+      $(".fas-tagline-01").css({position:'absolute',top:'-28px',fontSize:'37px'})
+      $(".fas-tagline-02").css({position:'absolute',top:'-28px',fontSize:'37px'})
+      // $(".from-line-01").css({top:'-21px',width:'227px',left:'5px'})
+      // $(".from-line-02").css({top:'-21px',left:'230px',width:'38px'})
       $("#from").css({left:'4px','-webkit-font-smoothing':'antialiased',marginTop:'20px'})
       $("#destination").css({top:'0px', fontSize:'54px'})
       $("#price-lockup").css({top:'2px'})
     }
 
     tl.add(f3CopyAnimation, "0")
+    tl.add(fasTaglineAnimation, "0")
     // TESTING - goto specific time of animation
     //tl.seek(8);
     // tl.pause(2)
@@ -459,11 +462,11 @@ function f3CopyAnimation() {
     var str = lastCharOfPrice[0].style.left
     if(str.length >= 5) {
       str = str.substring(0, str.length - 2)
-      str = str - 8
+      str = str - 15
       str = str + "px"
     } else {
       str = str.substring(0, str.length - 2)
-      str = str - 5
+      str = str - 8
       str = str + "px"
     }
       lastCharOfPrice.css({
@@ -504,6 +507,23 @@ function f3CopyAnimation() {
       }
     }
     tl.from(priceChild[index], 1, {alpha:0, overwrite:"all", scrambleText:{text:"X", chars:"123456789", revealDelay:0, speed:.3}, delay:10}, "0")
+  }
+}
+
+function fasTaglineAnimation() {
+  var tl = new TimelineLite();
+
+  var mySplitText = new SplitText(".fas-tagline-01", {type: "chars", absolute:true});
+  var mySplitText02 = new SplitText(".fas-tagline-02", {type: "chars", absolute:true});
+
+  var lets = shuffleLetters(mySplitText.chars, mySplitText02.chars);
+  var letters = lets[0];
+  var letters02 = lets[1];
+
+  var randomChars = "1234567890";
+
+  for(var index = 0; index < letters.length; index++){
+    tl.from([letters[index], letters02[index]], .4, {alpha:0, overwrite:"all",scrambleText:{text:"x", chars:randomChars, revealDelay:0, speed:.3}, delay:10}, index*0.08)
   }
 }
 
