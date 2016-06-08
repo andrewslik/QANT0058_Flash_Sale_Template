@@ -488,6 +488,8 @@ function startAnimation() {
       $(".button").css({top:'24px', left:'367px'})
       $(".terms-wrapper").css({bottom:'5px'})
       $("#from").hide()
+      $(".fas-tagline-01").css('text-align','center')
+      $(".fas-tagline-02").css('text-align','center')
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
       $(".fas-tagline-01").css({fontSize:'15px',top:'0px'})
