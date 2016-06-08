@@ -565,7 +565,7 @@ h4 {
 #f5-copy {
     position: absolute;
     display: block;
-    top: 19px;
+    top: 27px;
     left: 16px;
     z-index: 9000;
     cursor: pointer;
@@ -857,11 +857,10 @@ h4 {
 }
 .countdown-timer {
     position: absolute;
-    // margin: auto;
     margin-left:auto;
     margin-right:auto;
     width: 160px;
-    top: 16px;
+    top: 26px;
     text-align: center;
     bottom: 0;
     right: 0;
@@ -905,8 +904,8 @@ h4 {
 #sub-text {
     position: absolute;
     width: 140px;
-    left: 11px;
-    top: 41px;
+    left: 190px;
+    top: -17px;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 12px;
