@@ -77,10 +77,11 @@ function politeInit() {
 
     preloadAssets();
 
-    if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price)
+    if (dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default || !dynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price) {
         backupAnimation();
-    else
+    } else {
         loadFeed();
+    }
 
 }
 
@@ -492,11 +493,18 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").css({fontSize:'59px', lineHeight:'48px', fontWeight:'700', marginTop:'71px'})
+
       $("#sub-text").html("Sale ends in")
       $(".button").css({top:'336px'})
       $("#from").hide()
+
+        if ($("#destination").text().length >= 12) {
+          $("#destination").css({fontSize:'45px', lineHeight:'48px', marginTop:'71px'})
+        } else {
+          $("#destination").css({fontSize:'59px', lineHeight:'48px', marginTop:'71px'})
+        }
     } else {
+
       TweenLite.set($(".countdown-container"), {alpha:0})
       $("#fas-tagline").css('margin-bottom', '10px')
     }

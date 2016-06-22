@@ -543,10 +543,15 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").css({fontSize: '36px', lineHeight: '28px', marginTop:'40px'})
       $("#sub-text").html("Sale ends in")
       $("#from").hide()
       $(".fas-tagline-01").css('margin-bottom','0px')
+
+      if ( $("#destination").text().length >= 12) {
+        $("#destination").css({fontSize: '26px', lineHeight: '28px', marginTop:'40px'})
+      } else {
+        $("#destination").css({fontSize: '36px', lineHeight: '28px', marginTop:'40px'})
+      }
 
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
