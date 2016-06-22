@@ -47,7 +47,7 @@ function politeInit() {
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame1_text_970x250 = "Qantas fly away sale";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_160x600 = "Fly away to Hong Kong now";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x250 = "Fly away to Hong Kong now";
-  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to Hong Kong now";
+  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_300x600 = "Fly away to South Africa";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_728x90 = "Fly away to Hong Kong now";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame2_text_970x250 = "Fly away to Hong Kong now";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_160x600 = "show JSON price";
@@ -309,9 +309,8 @@ function initCSS() {
 
 function adjustCopyLayout() {
   // IF THE DESTINATION TEXT IS TOO LONG TO FIT ON ONE LINE, WE REDUCE THE FONT SIZE
-  if($("#destination").text().length > 12){
-      $("#destination").css("fontSize","50px");
-      $("#destination").css("lineHeight","47px");
+  if($("#destination").text().length >= 12){
+      $("#destination").css({fontSize:'45px', lineHeight:'47px'});
   }
 
   //RE-POSITION CTA BUTTON DEPENDING ON HEIGHT OF TEXT LOCKUP
@@ -377,7 +376,7 @@ function f3CopyAnimation() {
   var str = lastCharOfPrice[0].style.left
   if(str.length >= 5) {
     str = str.substring(0, str.length - 2)
-    str = str - 12
+    str = str - 8
     str = str + "px"
   } else {
     str = str.substring(0, str.length - 2)
