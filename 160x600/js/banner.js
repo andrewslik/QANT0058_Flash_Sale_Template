@@ -401,7 +401,7 @@ function f3CopyAnimation() {
     var str = lastCharOfPrice[0].style.left
     if (str.length >= 5) {
         str = str.substring(0, str.length - 2)
-        str = str - 5
+        str = str - 3
         str = str + "px"
     } else {
         str = str.substring(0, str.length - 2)

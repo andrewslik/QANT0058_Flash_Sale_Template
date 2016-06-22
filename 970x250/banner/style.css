@@ -777,6 +777,7 @@ body.mrec .container {
     -webkit-font-smoothing: antialiased;
     padding: 0 10px;
     top: -8px;
+    letter-spacing: -1px;
 }
 #asterix-char {
     position: absolute;
