@@ -443,12 +443,12 @@ h4 {
     background-color: #ee0000;
     clip: rect(0px, 728px, 90px, 0px);
 }
-.logos {
-    position: absolute;
-    z-index: 5000;
-    left: 490px;
-    bottom: 23px;
-}
+// .logos {
+//     position: absolute;
+//     z-index: 5000;
+//     left: 490px;
+//     bottom: 23px;
+// }
 #blue-shape {
     position: absolute;
     width: 113px;
@@ -967,4 +967,26 @@ h4 {
 }
 .fas-tagline-02 div {
   clip: rect(5px, 22px, 17px, 0);
+}
+
+.logo-container {
+    position: absolute;
+    width: 190px;
+    height: 30px;
+    top: 29px;
+    text-align: center;
+    z-index: 5000;
+    right: 13px;
+}
+
+.logos {
+    display: inline-block;
+    width: 126px;
+}
+.ow-logo {
+    display: inline-block;
+    width: 25px;
+    position: relative;
+    margin-left: 14px;
+    bottom: 5px;
 }

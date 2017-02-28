@@ -21,12 +21,12 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457251200000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.RawValue = "09/06/2016 23:59 (+11:00) ";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1473166740000;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1483216155000;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = false;
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = true;
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=HKG&callback=callbackFunction";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest?alt_cam=au:rp:0:dis:dbm:hkgpvg:n:price:sg1:n";
@@ -54,7 +54,7 @@ function politeInit() {
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x250 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_300x600 = "show JSON price";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_728x90 = "show JSON price";
-    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "Shanghai";
+    devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].frame3_text_970x250 = "London (Heathrow)";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].cta = "See deals";
     devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].short_terms = "*Prices based on payment at qantas.com by BPAY or POLi. Sale ends 23:59 (AEST) 6 June 2016, unless sold out prior. Selected travel dates and conditions apply.";
     Enabler.setDevDynamicContent(devDynamicContent);
@@ -282,10 +282,10 @@ function initBanner() {
 function initAnimation() {
 
     initCSS();
-    adjustCopyLayout();
 
     setTimeout(function() {
         startAnimation();
+        adjustCopyLayout();
     }, 240)
 }
 
@@ -317,7 +317,7 @@ function adjustCopyLayout() {
             $("#destination").css("fontSize","50px");
             // $("#destination").css("lineHeight","16px");
             // $("#f5-copy").css("top","20px");
-        } else if($("#destination").text().length >= 20){
+        } else if($("#destination").text().length >= 15){
             $("#destination").css("fontSize","47px");
             // $("#destination").css("lineHeight","18px");
             // $("#f5-copy").css("top","20px");
@@ -380,7 +380,7 @@ function startAnimation() {
     tl.to("#red-shape", 1.3, {rotation: 20, scaleX: 4, scaleY: 2.5, x: 745, y: -22, ease: Sine.easeInOut}, "8.8")
 
     tl.to(".bg-image", 1, {alpha:0, ease:Sine.easeOut}, "9")
-    tl.from(".logos-qantas", 1.3, {alpha:0, ease: Sine.easeInOut}, "9")
+    tl.from(".logo-container", 1.3, {alpha:0, ease: Sine.easeInOut}, "9")
 
     tl.to("#red-shape-end-frame2", 0, {autoAlpha:0, rotation:50, scaleX: 1.5, scaleY: 1.5, x:530, y:20, ease: Sine.easeOut}, "4")
     tl.to("#red-shape-end-frame2", 2.5, {autoAlpha:.3, rotation:-120, scaleX: 1.5, scaleY: 1.5, x:240, y:-20, ease: Sine.easeOut}, "8.7")

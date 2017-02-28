@@ -21,12 +21,12 @@ function politeInit() {
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].start.UtcValue = 1457251200000;
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end = {};
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.RawValue = "09/06/2016 23:59 (+11:00) ";
-  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1473166740000;
+  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].end.UtcValue = 1483216155000;
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].version = "price";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].region = "NSW";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].is_default = false;
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_price = true;
-  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = false;
+  devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].show_countdown = true;
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].JSON = "https:\/\/qantasflightdeals.herokuapp.com\/api\/search?&dealTypeCode=A&cheapestDealPerDistinctAirportPair=true&travelClass=ECO&tripType=R&quantity=1&marketingRegionCode=au&departureAirportCodes=SYD&arrivalAirportCodes=JNB&callback=callbackFunction";
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL = {};
   devDynamicContent.SFID00418QFAirlineFlash_SalesRed_PlanetJun16_Sheet1[0].URL.Url = "https://www.qantas.com/au/en/flight-deals/city-pairs.html/SYD/HKG/economy/lowest?alt_cam=au:rp:0:dis:dbm:hkgpvg:n:price:sg1:n";
@@ -290,7 +290,7 @@ function initCSS() {
 
     TweenLite.set($(".terms-wrapper"), {alpha:0})
     TweenLite.set($(".button"), {alpha:0, scale:.5})
-    TweenLite.set($(".logos"), {alpha:0})
+    TweenLite.set($(".logo-container"), {alpha:0})
 }
 
 
@@ -436,7 +436,7 @@ function startAnimation() {
         terms = $(".terms-wrapper"),
         ctaBtn = $(".button"),
         bgImage = $(".bg-image"),
-        logos = $(".logos"),
+        logos = $(".logo-container"),
         shapes = $(".shapes"),
         redShape = $("#red-shape"),
         blueShape = $("#blue-shape"),
@@ -483,13 +483,13 @@ function startAnimation() {
       $("#price-left-copy").hide()
       $("#price").hide()
       $("#price-right-copy").hide()
-      $("#destination").css({fontSize:'20px', lineHeight:'20px', top:'20px', 'text-align':'center', width:'164px'})
+      $("#destination").css({fontSize:'20px', lineHeight:'20px', top:'20px', 'text-align':'left', width:'184px'})
       $("#sub-text").html("Sale ends in")
       $(".button").css({top:'24px', left:'367px'})
       $(".terms-wrapper").css({bottom:'5px'})
       $("#from").hide()
-      $(".fas-tagline-01").css('text-align','center')
-      $(".fas-tagline-02").css('text-align','center')
+      $(".fas-tagline-01").css('text-align','left')
+      $(".fas-tagline-02").css('text-align','left')
     } else {
       TweenLite.set($(".countdown-container"), {alpha:0})
       $(".fas-tagline-01").css({fontSize:'15px',top:'0px'})
